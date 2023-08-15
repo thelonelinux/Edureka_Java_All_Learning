@@ -2,6 +2,10 @@
 Springboot Microservices Learning and Full Stack Project Build Up (Backend, frontend and Cloud, Docker)
 
 
+## Project Build Up from this Youtube Playlist
+* https://www.youtube.com/playlist?list=PLXXDXNrmlgEVMp_dPpVzWvylBAs52CxLw
+
+
 
 ## Springboot Microservices (Spring Project)
 ### Project Requirement 
