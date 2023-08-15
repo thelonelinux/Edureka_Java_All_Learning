@@ -13,3 +13,9 @@ Springboot Microservices Learning and Full Stack Project Build Up (Backend, fron
 * Git Bash
 * JDK 1.8
 * Postman
+
+### Prerequisites
+* Java
+* Spring Framework
+* SpringBoot (Springboot gives full project setup whereas in Spring Framework we have to set it up, which is time consuming)
+* Restful Webservices
