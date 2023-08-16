@@ -20,3 +20,4 @@
 
 ## What we are gonna do now?
 * 1. Build a simple API using SpringBoot Microservices and Consume it and test it and use it in some angular frontend
+* 2. Learn more about how Ecommerce websites are build and sold and best tech stack used
