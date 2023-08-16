@@ -26,3 +26,4 @@ Springboot Microservices Learning and Full Stack Project Build Up (Backend, fron
 * Chose Maven only and chose your required dependencies and then download the zip file, extract zip file and then open the project in Spring Tool Suite
 * So how to import that project in your Spring Tool Suite, to do that check this below video link
 * https://www.youtube.com/watch?v=G6CtysUkmJs&ab_channel=TecnoTab
+* 
