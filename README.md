@@ -20,3 +20,9 @@ Springboot Microservices Learning and Full Stack Project Build Up (Backend, fron
 * Spring Framework
 * SpringBoot (Springboot gives full project setup whereas in Spring Framework we have to set it up, which is time consuming)
 * Restful Webservices
+
+### Project Creation from Spring Initializer
+* https://start.spring.io/
+* Chose Maven only and chose your required dependencies and then download the zip file, extract zip file and then open the project in Spring Tool Suite
+* So how to import that project in your Spring Tool Suite, to do that check this below video link
+* https://www.youtube.com/watch?v=G6CtysUkmJs&ab_channel=TecnoTab
