@@ -9,7 +9,7 @@ Springboot Microservices Learning and Full Stack Project Build Up (Backend, fron
 
 ## Springboot Microservices (Spring Project)
 ### Project Requirement 
-* Spring Tool Suite (STS) IDE
+* Spring Tool Suite (STS) IDE (Please check this link to install Spring tool suite and get along with project creation => https://www.youtube.com/watch?v=P1N-RGJ2820&t=315s&ab_channel=GeekyScript)
 * Git Bash
 * JDK 1.8
 * Postman
