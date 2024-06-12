@@ -45,14 +45,25 @@
      * coupled, so this way we are disturbing other code. so this type of issue can come.
      * 2. Scaling Issue: let's say if we have more request is coming for Product Service, but not for Payments and Orders. Example 900 request only for Products but not ordering them.
      * So we need to scale up Product as servers will be loaded as more request are coming. which in monolithic we can't specifically scale for Product only, whereas in microservices
-     * we could have only scale the Product services, as there they are not tightly coupled.
+     * we could have only scaled the Product services, as they are not tightly coupled.
      * So scaling means to increase more load and handle more client request, we need to increase more RAM and CPU within Server which in turn will increase the capacity of machine/server
      * So this is called Vertical Scaling. So we can go upto 64 GB of RAM as much as high.
      * So there is Horizontal Scaling, here we increase the number of Instances (VM), Like multiple TomCat Server running in different Instances/VMs/EC2 Instance.
      * And in between we can keep Load Balancer, Load balancer will distribute the load, Load Balancer uses round robin, Algo etc will distribute the request.
      * So in horizontal scaling, you can create as many as instances, whereas in Vertical Scaling, you can't go beyond 128 GB Max. so horizontal scaling is better.
      * So we want only scaling for Products Module, hence independent scaling is not possible in Monolithic as they are tightly coupled.
-     * so this limitations led to Service Oriented Architecture called Microservies.
+     * so these limitations led to Service Oriented Architecture called SOA.
+     * In SOA, We have independent Services whereas in Monolithic we have tightly coupled services.
+     * In SOA, we will have separate serices with separate JAR file, which can be combined together in one folder to work together.
+     * So SOA is  SOAP based service and not RESTFul service (Now Rest has come). We have to pass WAR/JAR to connect to different services to work together.
+     * In SOA they connect services using ESB Middleware, ESB take care of client to service and service to service connection. No direct connection, Proxy is used between client and service.
+     * ESB supports many protocols like HTTP, SMTP, SFTP, JDBC etc. ESB also take cares of routing, security, transactions. ESB tools like Mulesoft etc.
+     * So now here ESB is doing the main role.
+     * BUT : What happens when ESB fails, as this is the only one connecting our services with the client.
+     * So the main limitations in SOA based Architecture is : Single Point of Failure. However ESB is also server only, we can have more ESB, but ESB is costly component, not all
+     * organization can afford the cost. So the cost of MuleSoft ESB is very high.
+     * So if we have only one ESB and it fails, then all the services will be down.
+     * SO WITH ALL THIS LIMITATIONS, WHY CAN'T WE JUST GO WITH SERVICE BASED MODEL ONLY WITHOUT USE OF ESB. So this let to evolution of microservices.
   * Microservices Architecture: Services are prepared separately in any code language, and connected by using webservices.
 
 
