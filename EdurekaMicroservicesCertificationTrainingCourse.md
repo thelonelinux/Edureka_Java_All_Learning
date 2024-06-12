@@ -20,19 +20,40 @@
   * Swagger (OpenAPI), Zipkin (API Tracing Libraries)
   * Docker (Supported by Linux Based OS/System) (Not usually supported in Windows, but you need to do by Virtual Box and inside install Ubuntu/Linux OS)
   * Sir has Google Cloud account, where he will host himself. He will setup virtual Machine there only, and install Docker there.
-  * You can take free google cloud Free tier account, with 300$ free usage, 3 months free subsriptions. Take when docker class is started, that time you can do
+  * You can take free Google Cloud Free tier account, with 300$ free usage, 3 months free subsriptions. Take when docker class is started, that time you can do
   * Once you done with docker, then close/delete the instance else you will be charged.
-* First three lectures will be only understanding the architecture, from fourth class we will doing hands-on code and practical.
+* First three lectures will be only about understanding the architecture, from fourth class we will doing hands-on code and practical.
 * START with MICROSERVICES Architecture
   * Microservices Architecture: Small services (To achieve some business functionality).
   * So Previously: Like if we need to do some functionality, let's say we want to measure the distance between two places, then we make class and write functionality there
-  * and other client will take the jar file of it and used it's functionality by keeping it in some central folder.
+  * and other client will take the jar file of it and use it's functionality by keeping it in some central folder.
   * But NOW what we do is we make services and host it somewhere, and then other clients will just use our functionality by calling the services.
-  * In jar client can know about whole code implementation, whereas in API the code are hidden from client.
-  * APIs can be reachable only using Web/Internet, hence they are called web services.
-  * Different way of Implementing WebServices: RESTful Web Services (We will be using this only) and SOAP based webservices. (HTTP is Protocol to connect Webservices)
-  * Monolithic Architecture : All code services code in same project.
-  * Microservices Architecture : Services are prepared separately in any code language, and connected by using webservices.
+  * In jar client can know about whole code implementation, whereas in API the code is hidden from the client.
+  * APIs can be reachable only using Web/Internet, hence they are called web services. They can be also accessed through URLs only
+  * Different way of Implementing WebServices: RESTful Web Services (We will be using this only) and SOAP-based webservices. (HTTP is Protocol to connect Webservices)
+  * Monolithic Architecture: All code services/modules are bundled in the same project jar/war file.
+     * (J2E based or Spring MVC) (You Create Java Packages: Users, Payments, Products, Orders etc within same project)
+     * Each of these packages will contain classes like APIs, controllers, SQL, etc in same for each Package.
+     * When you build this maven, you will get one jar/war file and then deploy it in application servers.
+     * jar examples like APIs, simple Java class projects, etc
+     * war is like web applications, need a website to run
+     * Advantage: Simple Project, 1 server only - so cost-effective.
+     * Disadvantage:
+     * 1. Tight Coupling :  Users, Payments, Products, Orders since all of them in same Project. Lets say we have some frequent enhancements in Product Module only so we will be taking
+     * some changes and test all other modules also, so this way we keep on doing however other modules no changes is required. So due to some product change functionality is not
+     * allowing to do other functionality, as it is tight coupled, customer are unable to make payments. so this way one module is affecting other module as they are tightly
+     * coupled, so this way we are disturbing other code. so this type of issue can come.
+     * 2. Scaling Issue: let's say if we have more request is coming for Product Service, but not for Payments and Orders. Example 900 request only for Products but not ordering them.
+     * So we need to scale up Product as servers will be loaded as more request are coming. which in monolithic we can't specifically scale for Product only, whereas in microservices
+     * we could have only scale the Product services, as there they are not tightly coupled.
+     * So scaling means to increase more load and handle more client request, we need to increase more RAM and CPU within Server which in turn will increase the capacity of machine/server
+     * So this is called Vertical Scaling. So we can go upto 64 GB of RAM as much as high.
+     * So there is Horizontal Scaling, here we increase the number of Instances (VM), Like multiple TomCat Server running in different Instances/VMs/EC2 Instance.
+     * And in between we can keep Load Balancer, Load balancer will distribute the load, Load Balancer uses round robin, Algo etc will distribute the request.
+     * So in horizontal scaling, you can create as many as instances, whereas in Vertical Scaling, you can't go beyond 128 GB Max. so horizontal scaling is better.
+     * So we want only scaling for Products Module, hence independent scaling is not possible in Monolithic as they are tightly coupled.
+     * so this limitations led to Service Oriented Architecture called Microservies.
+  * Microservices Architecture: Services are prepared separately in any code language, and connected by using webservices.
 
 
 
