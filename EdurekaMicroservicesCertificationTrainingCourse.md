@@ -64,7 +64,15 @@
      * organization can afford the cost. So the cost of MuleSoft ESB is very high.
      * So if we have only one ESB and it fails, then all the services will be down.
      * SO WITH ALL THIS LIMITATIONS, WHY CAN'T WE JUST GO WITH SERVICE BASED MODEL ONLY WITHOUT USE OF ESB. So this let to evolution of microservices.
-  * Microservices Architecture: Services are prepared separately in any code language, and connected by using webservices.
+     * So microservice is subset of SOA without ESB.
+     * In both SOA and Microservices Architecture: Services are the fundamental Building Block.
+     * In Microservice we have smaller services and follow the single responsibility principle. Which make services more smaller and granuler.
+     * In Micorservice we don't have ESB so here we will write our own connector code or built-in connectors are there. So there is tradeoff between SOA and Microservices.
+     * So a organization/company must check which to choose, cost or work. Considering the cost factore and client requirement factor.
+     * Microservices usually supports RESTFul only, SOAP also it can support, but we do RESTFul Services only. Recommended is REST Services
+     * All APIs are not webservices, but all WebServices are APIs. APis can be called Locally also like in Jar file put in central folder.
+  * Microservices Architecture: Services are prepared separately in any code language, and connected by using web services connectors.
+  * END OF CLASS 1
 
 
 
