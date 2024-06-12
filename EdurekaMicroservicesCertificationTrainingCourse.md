@@ -23,6 +23,16 @@
   * You can take free google cloud Free tier account, with 300$ free usage, 3 months free subsriptions. Take when docker class is started, that time you can do
   * Once you done with docker, then close/delete the instance else you will be charged.
 * First three lectures will be only understanding the architecture, from fourth class we will doing hands-on code and practical.
+* START with MICROSERVICES Architecture
+  * Microservices Architecture: Small services (To achieve some business functionality).
+  * So Previously: Like if we need to do some functionality, let's say we want to measure the distance between two places, then we make class and write functionality there
+  * and other client will take the jar file of it and used it's functionality by keeping it in some central folder.
+  * But NOW what we do is we make services and host it somewhere, and then other clients will just use our functionality by calling the services.
+  * In jar client can know about whole code implementation, whereas in API the code are hidden from client.
+  * APIs can be reachable only using Web/Internet, hence they are called web services.
+  * Different way of Implementing WebServices: RESTful Web Services (We will be using this only) and SOAP based webservices. (HTTP is Protocol to connect Webservices)
+  * Monolithic Architecture : All code services code in same project.
+  * Microservices Architecture : Services are prepared separately in any code language, and connected by using webservices.
 
 
 
