@@ -77,6 +77,55 @@
 
 
 ### 2.Microservices Design and Architecture
+* Microservices design based on Business Capability
+  * So we can have different microservices following some business capability and each microservices has more services within that domain.
+* Based on Team also microservices can be divided.
+* Advantages and features of Microservices:
+ * 1. An application can be divided into multiple microservices based on single responsibility principle either by /business capability
+ * 2. Microservices are independent services that perform their own business functionality
+  Limitations that we have seen in the monolithic are eliminated
+ * 3. Each microservice will have their own code base,own server, have its own devops cycle(CI/CD)- build, testing, releases
+  Because of this feature, microservices are used in agile environment
+ * 4. Microservice can also be considered for product development, research and innovations
+ * 5. There is no dependency on 3rd party heavy components like ESB for service orchestrations or integrations
+ * 6. They are platform independent and follow polyglot architecture
+ * 7. We can build or add new functionality without affecting the current code base.
+ * 8. Each service/small microservice in microservice can be build in different tech stack.
+      * And connect with each other over API calls. This is called heterogeneous tech stack known as polyglot architecture.
+      * They connect on WEB URLs using REstFul APIs. URL : https://<ipAddress> or <hostName>/Appname/ApiPath
+      * Methods like : http POST, UPDATE, DELETE, GET (These response are send by client or other service to connect and get the data)
+      * So all other techStack understands API response, so heterogeneous tech stack will work here in micirservices.
+      * RestFul Webservices  : Representational state transfer
+      * Representation - Data exchange format between server and client : JSON/XML
+      * JSON is widely used in Restful webservices
+      * They use http to communicate and are stateless
+ * Limitations of Microservices.
+    * 1. Microservice has more maintenance as each service is running in it's own servers
+    * 2. Debugging becomes complex in microservice, as they are different code base code stack
+      3. Latency Issue : Local call is faster as compared to remote API call.
+      4. Dependencies and transactions. : payment in microservice is done by external services so it is bit difficult to manage
+      5. Separate Database or same database : which to chose.
+* when you need to decide to implement microservices architecture
+ * 1. when number of services is more than 5 to 10 and business growing with different subdomains - definitely you can start proposing microservices
+ * 2. when number of services is fixed in bewteen 5 to 10 or less than 5 and the business will not grow atleast for 2 years,
+      * client wants this to be started as minimum viable product - this can   be started with monolithid
+
+* Patterns Used In Microservices
+1. Communication Patterns -- Asynchronous and Synchronous
+2. API Gateway Pattern
+3. Transactional patterns(Saga patterns)
+4. Event sourcing
+5. CQRS
+6. Service Discovery
+7. Load Balancing
+8. Circuitbreaker
+9. Monitoring
+10. Shared data base pattern
+11. Single database per service pattern
+12. External config pattern
+13. Chained pattern)
+
+
 ### 3.Introduction to Springboot and Spring framework - I
 ### 4. Springboot and Spring Framework - II
 ### 5.Microservices with Springboot and Cloud
