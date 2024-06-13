@@ -102,28 +102,30 @@
  * Limitations of Microservices.
     * 1. Microservice has more maintenance as each service is running in it's own servers
     * 2. Debugging becomes complex in microservice, as they are different code base code stack
-      3. Latency Issue : Local call is faster as compared to remote API call.
+      3. Latency Issue: Local call is faster as compared to remote API call.
       4. Dependencies and transactions. : payment in microservice is done by external services so it is bit difficult to manage
-      5. Separate Database or same database : which to chose.
-* when you need to decide to implement microservices architecture
+      5. Separate Database or same database: which to chose.
+* when you need to decide to implement a microservices architecture
  * 1. when number of services is more than 5 to 10 and business growing with different subdomains - definitely you can start proposing microservices
- * 2. when number of services is fixed in bewteen 5 to 10 or less than 5 and the business will not grow atleast for 2 years,
-      * client wants this to be started as minimum viable product - this can   be started with monolithid
+ * 2. when the number of services is fixed in between 5 to 10 or less than 5 and the business will not grow atleast for 2 years,
+      * client wants this to be started as a minimum viable product - this can   be started with monolithic
 
 * Patterns Used In Microservices
 1. Communication Patterns -- Asynchronous and Synchronous
-2. API Gateway Pattern
+ * Synchronous: Where one Microservice will wait for a service call to complete when that service is called, this is synchronous. It gets blocked until a request is complete
+ * Asynchronous: when service doesn't wait for a response, it is asynchronous. 1. Point to point queue model and 2. publish subscribe model.
+2. API Gateway Pattern (from next class)
 3. Transactional patterns(Saga patterns)
 4. Event sourcing
 5. CQRS
 6. Service Discovery
 7. Load Balancing
-8. Circuitbreaker
+8. Circuit breaker
 9. Monitoring
-10. Shared data base pattern
+10. Shared database pattern
 11. Single database per service pattern
 12. External config pattern
-13. Chained pattern)
+13. Chained pattern
 
 
 ### 3.Introduction to Springboot and Spring framework - I
