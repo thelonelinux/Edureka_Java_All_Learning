@@ -129,6 +129,43 @@
 
 
 ### 3.Introduction to Springboot and Spring framework - I
+* Patterns Used In Microservices (Continue where we left in previous class)
+2. API Gateway Pattern (from next class)0
+  * In layman word, it is just URL from which you can access the microservice/or service api's.
+  * there are different ways to connect between to client and services for API.
+  * Ways like routing (path based routing [example like /orders for orders and /product for product service and so on], header based and host based)
+  * api gateway connects client to service, usually using api url call. which gives JSON response,
+  * api gateway also provides caching in memory data.
+  * api gateway is also like service/microservice.
+  * but we have third party app running this service, we don't have to write our own code for api gateway.
+  * TTL, time to live for cache data is 24 hours, after that it gets deleted.
+  * An api which you have created can be monetized if more than 10000 requests are received in a day.
+  * Features of API gateway.
+     * Routing, Security (API gateway will handle authentication and authorization),
+     * Caching, Rate Limiting/Throttling, Load Balancing, (Service Discovery and Circuit breaker = This two is bit separate we will check)
+3. Transactional patterns(Saga patterns)
+ * Let's understand by an example
+ * //start transaction (Let's  say we have following steps in our transaction)
+ * insert into orders table, insert into payments table, update inventory, generate invoice, process for shipment
+ * //end transaction or commit transaction
+ * NOW if there is an exception occuring in inventory table updation, like data not found
+ * orders has been generated, payment has been dedcuted but data not found in inventory --this leads to data inconsistencies
+ * In order to avoid data inconsistencies, we use transactions across multiple db operations
+ * SO in microservices we have LOG BASED JOURNAL, so any db operation will be logged in this journal which is managed by DB and Transaction manager,
+ *  and when the commit is successful, then only it will update in DB tables.
+ * Once the failure is recorded, the exception will be generated, then it won't go to next line, and the log entrys will be deleted, and nothing gets updated in the table.
+4. Orchestrator Pattern (Responsible of managing transaction across microservices) and Choreography Pattern (This pattern is used when orchestrator transaction fails)
+4. Event sourcing
+5. CQRS
+6. Service Discovery
+7. Load Balancing
+8. Circuit breaker
+9. Monitoring
+10. Shared database pattern
+11. Single database per service pattern
+12. External config pattern
+13. Chained pattern
+   
 ### 4. Springboot and Spring Framework - II
 ### 5.Microservices with Springboot and Cloud
 ### 6.Microservices Security
