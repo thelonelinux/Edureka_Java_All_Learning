@@ -182,10 +182,36 @@
 * To know the spring Boot we need to first know the basics of spring framework, because spring boot is developed over spring framework.
 * Microservice can use any programming language to implement, like java, c#, goLang, Python etc.
 * But we will use Java Spring boot to implement microservice architecture.
-* SPRING
+* SPRING FRAMEWORK
   * Spring started fundamentally two patterns
-     * 1. Inversion of Control (Better check image, everything is mentioned there)
-     * 2. Dependency Injection
+     * 1. Inversion of Control (IOC) (Better check image, everything is mentioned there)
+     * 2. Dependency Injection (DI)
+     * Inversion of Control : From Image, extra Point
+        * The pattern where the responsbility of creating and managing the object is not from the main application class but from the factory component is called Inversion of control
+        * Factory component is spring container or sprint context or bean factory.
+        * Previously we use xml in configuration, but now we use annotation in configuration, annotations is modern way of doing this.
+        * This classe B, which we call POJOs, (Means plain old java object), it can be any normal class.
+        * So this all is fundamental principle of IOC
+     * Dependency Injection :
+        *  IOC uses the Dependency Injection to manage the objects.
+        *  DI is the subset of IOC. So IOC also injects the object in the container. You don't have to write setter or getter method to get other object in current object.
+        *  So responsiblity of creating the object and managing the dependency object is all taken care by spring framework to use the object and call the respective methods of the object.
+        *  So this is the fundamental concept of spring framework
+       
+* SPRING CORE : So using these concept SPRING CORE has come in the picture. Spring core includes IOC and DI.
+* So spring slowlly started developing modules or templates for enterprise applications on top of this like shown below
+    * SPRING CORE (IOC and DI)
+       * Spring AOP (Aspect oriented Programming)
+       * Spring JDBC (for database management)
+       * Spring MVC (on top of it we have Spring Rest) (This for developing restful web services and web applications)
+       * Spring Security (For Implementing security)
+       * Spring Data
+       * spring messaging
+       * Spring Integration (For lightweight applications like light weight ESB)
+       * Above all of this SPRINGBOOT is build. (Check in image note)
+     
+* So now using springboot we can develop some applicatoin in 5 weeks then using simple spring core only it would have or otherwise take 8 weeks.
+* So Spring boot saves 30-35% of effort and develops application faster.
 
 
 ### 5.Microservices with Springboot and Cloud
