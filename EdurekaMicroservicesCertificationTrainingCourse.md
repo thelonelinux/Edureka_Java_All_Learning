@@ -177,6 +177,17 @@
 13. Chained pattern
    
 ### 4. Springboot and Spring Framework - II
+* Spring FrameWork and Spring Boot
+* In Microservice, single database per service is the ideal pattern, but it has limitation, as we see in previous lecture.
+* To know the spring Boot we need to first know the basics of spring framework, because spring boot is developed over spring framework.
+* Microservice can use any programming language to implement, like java, c#, goLang, Python etc.
+* But we will use Java Spring boot to implement microservice architecture.
+* SPRING
+  * Spring started fundamentally two patterns
+     * 1. Inversion of Control (Better check image, everything is mentioned there)
+     * 2. Dependency Injection
+
+
 ### 5.Microservices with Springboot and Cloud
 ### 6.Microservices Security
 ### 7.Docker with Microservices using Spring Boot - I
