@@ -212,6 +212,9 @@
      
 * So now using springboot we can develop some applicatoin in 5 weeks then using simple spring core only it would have or otherwise take 8 weeks.
 * So Spring boot saves 30-35% of effort and develops application faster.
+* Rest you can check in the image : SpringBoot on top of spring core.
+
+* Next now we start with coding and spring, but first we will see IOC and DI, how it is done in spring.
 
 
 ### 5.Microservices with Springboot and Cloud
