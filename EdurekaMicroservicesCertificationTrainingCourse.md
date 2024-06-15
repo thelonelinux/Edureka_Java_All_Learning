@@ -72,7 +72,7 @@
      * Microservices usually supports RESTFul only, SOAP also it can support, but we do RESTFul Services only. Recommended is REST Services
      * All APIs are not webservices, but all WebServices are APIs. APis can be called Locally also like in Jar file put in central folder.
   * Microservices Architecture: Services are prepared separately in any code language, and connected by using web services connectors.
-  * END OF CLASS 1
+  * END OF CLASS 1 ------
 
 
 
@@ -114,7 +114,7 @@
 1. Communication Patterns -- Asynchronous and Synchronous
  * Synchronous: Where one Microservice will wait for a service call to complete when that service is called, this is synchronous. It gets blocked until a request is complete
  * Asynchronous: when service doesn't wait for a response, it is asynchronous. 1. Point to point queue model and 2. publish subscribe model.
-2. API Gateway Pattern (from next class)
+2. API Gateway Pattern (from next class) ------
 3. Transactional patterns(Saga patterns)
 4. Event sourcing
 5. CQRS
@@ -128,7 +128,7 @@
 13. Chained pattern
 
 
-### 3.Introduction to Springboot and Spring framework - I
+### 3.Introduction to Springboot and Spring framework - I (But we only did pattern in microservices notes learning, no codes)
 * Patterns Used In Microservices (Continue where we left in previous class)
 2. API Gateway Pattern (from next class)0
   * In layman word, it is just URL from which you can access the microservice/or service api's.
@@ -155,8 +155,18 @@
  *  and when the commit is successful, then only it will update in DB tables.
  * Once the failure is recorded, the exception will be generated, then it won't go to next line, and the log entrys will be deleted, and nothing gets updated in the table.
 4. Orchestrator Pattern (Responsible of managing transaction across microservices) and Choreography Pattern (This pattern is used when orchestrator transaction fails)
-4. Event sourcing
-5. CQRS
+   * pattern In choreogrpahy, there is no seperate service like orchestrator to manage transactions
+   * Here services will interact directly with other services through message queues (asynch communication) and manage transactions
+   * We will understand this more with the project
+5. Event sourcing and CQRS
+ * 5. CQRS
+ * You can learn about this in google search dzone blog by kiran sir only, our mentor
+ * Example in event sourcing, first customer selected pizza and ice-cream, and later deleted ice-cream, and order only pizza, so to log all this event in somewhere
+ * so htat our business can track this event. and based on this event we can take some decisions, like cookies., analytics etc we do by AI/ML algos.
+ * so this all about it.
+ * In CQRS : like we have write operation in one data base and read (select) in other server database, so there must be read replica service between them to sync data between
+ * read and write servers.
+ * END of Class 3 -------
 6. Service Discovery
 7. Load Balancing
 8. Circuit breaker
