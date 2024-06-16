@@ -176,7 +176,7 @@
 12. External config pattern
 13. Chained pattern
    
-### 4. Springboot and Spring Framework - II
+### 4. Springboot and Spring Framework - II (Here we did spring framework IOC and DI understand via code and using spring MVC we created the rest service project)
 * Spring FrameWork and Spring Boot
 * In Microservice, single database per service is the ideal pattern, but it has limitation, as we see in previous lecture.
 * To know the spring Boot we need to first know the basics of spring framework, because spring boot is developed over spring framework.
