@@ -1,0 +1,63 @@
+prerequiste for this course is java
+
+Microservices is not language bound
+it is technology agnostic
+
+if we know solutions to build using microservices
+we can use any programming language
+
+we will see all practicals from java perspective
+
+spring boot framework to implement microservices
+
+spring boot framework --- core java basics -- prerequisite
+
+                          basics of spring framework(ioc, di)--introduction on these
+                          spring aop(aspect oriented programming)
+                          spring mvc/spring rest -- i will give details on this
+                          sprin data jpa -- database related(mysql database)_
+
+                          Restful webservices-- 
+                          spring boot caching
+                          actuator
+
+enhance this knowledge to start building microservices using springboot and scale these microservices
+using spring cloud(service discovery, service load balancing(client side load balancing),
+                       resiliency with circuitbreaker, api gateway, monitoring and api tracing,external config)
+
+pivotal cloud foundry alternative to kubernetes uses spring cloud libraries
+
+microservice security --- spring security basic auth, OAuth2, JWT
+
+dockers --- how we will leverage docker containers for hosting and running microservices
+
+atually it is 24 hrs course with 8 modules (each module is 3 hrs)
+but from my 1st batch onwwards i did not completed this course in 24 hrs
+33 hrs-35 hrs
+
+
+1. JDK 17, spring boot 2.7.9
+2. Maven 3
+3. Eclipse latest version or STS(spring tool suite)
+4. MySQL 5.5 or 8
+5. Postman or Advanced Rest client tool(to test back end rest apis)
+6. ActiveMQ--message broker, JMS based
+
+Swagger/OpenAPI
+Zipkin--api tracing library
+
+till here i will be using my local system
+******************
+
+dockers -- supported by Linux 
+            in windows, setup Virtual box and inside that you should install Ubuntu OS
+                my own google cloud account
+                i wll set up virtual machine with ubuntu OS and install docker engine
+
+              google cloud free account --- 3 months free subscription with 300$ free usage
+              AWS free trial -- raise support ticker to AWS that you are using for experimental and training purpose
+***********************************************************************************
+
+
+
+
