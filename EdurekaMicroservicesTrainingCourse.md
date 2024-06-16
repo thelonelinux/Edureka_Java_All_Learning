@@ -215,6 +215,15 @@
 * Rest you can check in the image : SpringBoot on top of spring core.
 
 * Next now we start with coding and spring, but first we will see IOC and DI, how it is done in spring.
+* Install JDK-17, Eclipse IDE for Enterprise Java and Web Developers and STS (Spring Tool Suite)
+* PostMan
+* Coding part : IOC, DI, Maven, Spring Projct, Annotations, Pom.xml, AppicationContext, Configuration, Bean, Simple Spring Project
+* We learn about annotations, beans object, configuration, component, componentScan, autowired annotation, Rest you need to write code and save codes with comment in this repo to understand
+* Explained how IOC and DI is used in Spring etc.
+* Next we see about Rest and Spring  MVC Architecture.
+* Some good notes and lengthy notes,
+* CODING PROJECT : Now start with programming with spring rest.
+* To Develop Restful Webservice using MVC and then convert to spring boot.
 
 
 ### 5.Microservices with Springboot and Cloud
