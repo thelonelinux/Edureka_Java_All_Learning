@@ -1,0 +1,42 @@
+<config xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+	xmlns='http://www.ehcache.org/v3'
+	xmlns:jsr107='http://www.ehcache.org/v3/jsr107'>
+
+	<service>
+		<jsr107:defaults enable-statistics="true" />
+	</service>
+
+	<cache alias="product">
+		<key-type>java.lang.String</key-type>
+		<value-type>com.springbootcachedemo.Product</value-type>
+		<expiry>
+			<!-- ttl specifies time to live, that is how much time the data can be 
+				in cache -->
+			<!-- in this example, we are setting 10 seconds, after 10 sec, data gets 
+				deleted from cache -->
+			<!-- immediately after cache deletion happens, a request comes, it will 
+				be cache miss data is fetched from the database -->
+			<ttl unit="seconds">20</ttl>
+		</expiry>
+		<!-- we can write custom listeners like when cache gets created, when cach 
+			gets updated -->
+		<listeners>
+			<listener>
+				<class>com.springbootcachedemo.CustomCacheEventListener</class>
+				<event-firing-mode>ASYNCHRONOUS</event-firing-mode>
+				<event-ordering-mode>UNORDERED</event-ordering-mode>
+				<events-to-fire-on>CREATED</events-to-fire-on>
+				<events-to-fire-on>UPDATED</events-to-fire-on>
+				<events-to-fire-on>EXPIRED</events-to-fire-on>
+			</listener>
+
+		</listeners>
+		<!-- ehcache has feature to store the objects on disk if memory overflows -->
+		<!-- in this example, 2000 objects are stored in memory, if exceeds beyond 
+			2000, 1000 MB can be stored on disk -->
+		<resources>
+			<heap unit="entries">2000</heap>
+			<offheap unit="MB">1000</offheap>
+		</resources>
+	</cache>
+</config>
