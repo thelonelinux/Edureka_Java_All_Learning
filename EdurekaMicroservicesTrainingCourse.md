@@ -228,7 +228,7 @@
  * AppInitializer.java Class - This is used to register Dispatcher servlet, some libraries added in pom.xml to use it by extending that library in this class.
    * This will work like web.xml, where any url pattern is send url servlet.
    * Here we have to add some override methods. Here we do servlet mappings
- * AppConfig class - for Creating Beans and Configuration and Component Scan. This take cares of IOC and DI. Following annotations will be used in this class
+ * AppConfig class (Configuration Class) - for Creating Beans and Configuration and Component Scan. This take cares of IOC and DI. Following annotations will be used in this class
    * @Configuration : Defines configuratoin of spring beans (object)
    * @ComponentScan : Scans for the @Component and create spring beans
    * @EnableWebMvc : This will enable MVC functionality (like dispatcher servlet loading) This will work with Jackson library added in Pom.xml to convert json to java and vice versa
@@ -237,16 +237,71 @@
     * For now we have just created hardcoded customer object and added some value in it to send it as API response.
  * AppController.java Class :  To make Rest API calls class
   *  @RestController annotation is used to identify it as our API controller in making URLs,
-  *  @GetMapping annotation used in Method as url 
+  *  @GetMapping("/customer") annotation used in Method as url 
  * Pom.xml for storing required dependency
  * In spring framework we had to install TomCat server to run/deploy our project on the browser, In springBoot Tomcat server is pre-installed.
  * We did all this in Eclipse IDE
  * Json Response of GET Method was created, next time we will see for other method like PUT, POST etc
+ * Rest URL : http://localhost:8080/springRestApiDemoProject/customer :
+   * HTTP(This is protocol) ://localhost (Tomcat server or host name or IP address):8080 (Port)/springRestApiDemoProject (Application name)/customer (Api Path - GET customer)
 * Next clas we will see how to do same task Using SpringBoot.
-* End of Class 4 -----
+* End of Class 4 -------
 
 
 ### 5.Microservices with Springboot and Cloud
+* Class 5 Learning
+* Yesterday's Project using SpringBoot. Previously done in Spring MVC.
+* So to create a springboot project, It is recommended to create a project from scratch using Spring boot Initializer.
+* Open like : https://start.spring.io (And there you can create a spring project from scratch)
+* Over there create a project : 
+ * Select maven, java 17, jar file, name artifacts and group name as project name and package name as com.projectname, and then after add dependencies,
+ * In dependencies you can add Spring Web (Restful one), This will also have embedded Tomcat server in it.
+ * And then click on GENERATE, it will generate a zip folder.
+ * Extract that project.
+ * Import that project in Eclipse as a maven project. You could have done this in Spring Tool Suite IDE also. Check outsing youtube videos to follow full course.
+ * Now let's compare with the old project in last class that spring mvc one.
+ * You will see many base codes have been generated on it's own, structure is already generated.
+* SPRING BOOT STARTER dependency : (Very important), This helps in solving in our dependencies and versions of dependency management. check lecture for more insight.
+* So as compared to spring MVC project and this spring boot project we have following advantage
+   *  1. Spring boot starter packs - This solves dependency management issues in the project.
+         * spring boot team does a lot of research in starter packs. This also manage version compatibility.
+         * This will be under parent starter parent pack version, so this will be inherit to child version, so no version change update is required.
+   *  2. With the spring starter web - we also get embedded Tomcat server to setup or deploy
+   *  3. spring boot autoconfiguration - Like in previous Spring MVC class we had Appconfig.java class and AppInitializer class.
+         * But in today's spring boot project this two classes are not required.
+         * So because of spring boot autonconfigure, that two class is not required, only customer and appController class copy and past and run the project. it will run.
+         * This will automatically take care of all those configuration and beans things.
+         * So we have a new class named with project named (SpringBootDemoApplication.java)
+         * where @SpringBootApplication annotation is used to take care of all those annotation functionality required in
+         * Appconfig and AppInitializer class in previous mvc project.
+         * Spring boot auto configuration Working : (See image in class video only)
+            * this will find the libraries in the class path and create the configuration beans automatically
+            * example: spring boot auto configuration will find mvc libraries in the class path and create mvc configuration beans automatically
+            *  when we add spring-boot-starter-web in pom. xm1, the mvc libraries will be added to classpath
+            *  WebMvcAutoConfiguration :  @EnableMvc -   enable mvc functionality register dispatcher servlet
+            *  which AppInitializer.java is doing
+            *  @SpringBootApplication = @Configuration  + @ComponentScan + @EnableAutoConfiguration 
+            *  @Configuration (create spring beans)
+            *  @ComponentScan ( scan for the @Component and create spring beans)
+            *  @EnableAutoConfiguration (will trigger the auto configuration  functionality)
+* We can also do POST Mapping here, previously we only did Get mapping.
+* PostMapping("/customers") in AppController.java class
+* So to test this, we can't test this on browser, we need client like PostMan. (Very very important learning)
+* Only GET request can be checked in browser (Very Very important learning)
+* So open that url in postman and send the data in json format only as we get for GET request, format should be that only. So this is how we send post request.
+* So this will be send to spring dispatcher. The post we have done will be sent to spring dispatcher servlet.
+* dispatcher servlet will use jackson library and transform json to java object and call the controller bean. So this is how POST request will work.
+* --
+* Now Next Topic : Spring Boot Data
+* SPRING BOOT DATA :
+  * How to connect java object to database. We will use JDBC. JDBC is a framework library, which will connect with database and do database task.  
+
+
+
+
+
+
+
 ### 6.Microservices Security
 ### 7.Docker with Microservices using Spring Boot - I
 ### 8.Docker with Microservices using Spring Boot - II
