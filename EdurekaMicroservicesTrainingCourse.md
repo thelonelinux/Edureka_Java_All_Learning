@@ -224,6 +224,26 @@
 * Some good notes and lengthy notes,
 * CODING PROJECT : Now start with programming with spring rest.
 * To Develop Restful Webservice using MVC and then convert to spring boot.
+* So a simple rest api was created using spring framework, spring MVC.
+ * AppInitializer.java Class - This is used to register Dispatcher servlet, some libraries added in pom.xml to use it by extending that library in this class.
+   * This will work like web.xml, where any url pattern is send url servlet.
+   * Here we have to add some override methods. Here we do servlet mappings
+ * AppConfig class - for Creating Beans and Configuration and Component Scan. This take cares of IOC and DI. Following annotations will be used in this class
+   * @Configuration : Defines configuratoin of spring beans (object)
+   * @ComponentScan : Scans for the @Component and create spring beans
+   * @EnableWebMvc : This will enable MVC functionality (like dispatcher servlet loading) This will work with Jackson library added in Pom.xml to convert json to java and vice versa
+   * this config class is given in parameter in AppInitializer dispatcher servlet. Dispatcher servlet will use this config class to create spring beans, manage beans in this mvc framework.
+ * Customer class - for our POJO class, to store data of customer object and send as json.
+    * For now we have just created hardcoded customer object and added some value in it to send it as API response.
+ * AppController.java Class :  To make Rest API calls class
+  *  @RestController annotation is used to identify it as our API controller in making URLs,
+  *  @GetMapping annotation used in Method as url 
+ * Pom.xml for storing required dependency
+ * In spring framework we had to install TomCat server to run/deploy our project on the browser, In springBoot Tomcat server is pre-installed.
+ * We did all this in Eclipse IDE
+ * Json Response of GET Method was created, next time we will see for other method like PUT, POST etc
+* Next clas we will see how to do same task Using SpringBoot.
+* End of Class 4 -----
 
 
 ### 5.Microservices with Springboot and Cloud
