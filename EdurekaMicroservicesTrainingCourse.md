@@ -1,6 +1,6 @@
 # Edureka Microservices Certification Training Course
 
-## Course Content: (Total 8 Modules, Sessions of 3 hours each)
+## Course Content: (Total 8 Modules, Sessions of 3 hours each) : [All the code and notes, ppt and images of microservice class are added, IMP***]
 ### 1. Introduction to Microservices
 * Class 1 Recording Learning
 * Pre-requisites: Java
