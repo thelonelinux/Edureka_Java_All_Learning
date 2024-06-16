@@ -303,10 +303,16 @@
    * And then later in Spring Boot Spring Data JPA was build on top of JPA Hibernate. And so now we will be using this in our code.
    * There is also Spring JDBC, which is also build on top of JDBC like JPA Hibernate, But Spring Boot Data JPA uses JPA Hibernate only.
    * So we will now learn about Spring Data JPA (Spring BOOT DATA)
-   * @Entity annotation is used to map table with Database.
+   * In JPA a class should be marked with @Entity annotation to map with the table with Database.
    * So if JDBC takes 10-15 line of codes then for same task Hibernate JPA will take 3-5 lines of code, and again Spring Data JPA will take just one line of code.
-   * ----
+   * JPA is method only, all the implementation is provided by Hibernate.***IMP
+   * SpringBoot Supports Hibernate by default.
+   * next----
 * Let's start with code in Spring Boot Data : Spring Data JPA
+* Spring Data JPA
+   * We will be using MySql Database
+   * Sir will upload the code in LMS, check there and put in your github
+   * Too continu here only wiht code and detailer JPA Notes.
 
 
 
