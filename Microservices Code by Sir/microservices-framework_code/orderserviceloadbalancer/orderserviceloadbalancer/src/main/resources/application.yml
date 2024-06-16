@@ -1,0 +1,30 @@
+server:
+  port: 6200
+eureka:
+  client:
+    serviceUrl:
+       # this will tell the address of Eureka server
+      defaultZone: http://localhost:1111/eureka/
+  # the value specified in the appname, with this name it get registered with Eureka server
+  instance:
+    appname: orderserviceloadbalancer
+spring:
+  application:
+    name: orderserviceloadbalancer
+resilience4j:
+  circuitbreaker:
+    configs:
+      default:
+        sliding-window-size: 10
+        permitted-number-of-calls-in-half-open-state: 3
+        sliding-window-type: COUNT_BASED
+        minimum-number-of-calls: 10
+        wait-duration-in-open-state: 5s
+        failure-rate-threshold: 50
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+        

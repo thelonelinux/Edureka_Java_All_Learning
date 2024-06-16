@@ -1,0 +1,13 @@
+server:
+  port: 7200
+eureka:
+  client:
+    serviceUrl:
+       # this will tell the address of Eureka server
+      defaultZone: http://localhost:1111/eureka/
+  # the value specified in the appname, with this name it get registered with Eureka server
+  instance:
+    appname: orderservice
+spring:
+  application:
+    name: orderservice
