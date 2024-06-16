@@ -1,5 +1,9 @@
 # SpringbootMicroservices_LearnAndProjectBuild
+For detailed understanding check EdurekaSpringBootMicroserice readme file. You will understand how everything works in java and what is the end point from where we have to start. we don't have to learn legacy things tech stack of java. 
 Springboot Microservices Learning and Full Stack Project Build Up (Backend, frontend and Cloud, Docker)
+Learning Microservices with Springboot in Edureka will be enough to do starter as well as advance. 
+Anyways starter are not required. In Edureka Microservices, Starter are explained, so leave starter and start with spring boot only
+For IOC and DI, you can see bit spring framework working example with code, that too explained in spring boot microservice lecture.
 
 
 ## Project Build Up from this Youtube Playlist
