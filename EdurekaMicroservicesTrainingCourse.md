@@ -294,7 +294,18 @@
 * --
 * Now Next Topic : Spring Boot Data
 * SPRING BOOT DATA :
-  * How to connect java object to database. We will use JDBC. JDBC is a framework library, which will connect with database and do database task.  
+  * How to connect java object to database. We will use JDBC. JDBC is a framework library, which will connect with database and do database task.
+  * Evolution of Spring DATA JPA from legacy JDBC Base.
+   * JDBC to Spring Data JPA (Java Persistence API) Evolution.png (Check this image for more details and pic and notes)
+   * Initially we used JDBC to connect java object with Database in java. (but it will take 10-15 lines of code to make connection and others work)
+   * So later we introduced Hibernate, EclipsLink, IBatis third pary library to make simplify these steps.
+   * But hibernate become more popular and Spring Boot Data also uses hibernate only, So JPA Hibernate was build above JDBC knows as JPA Hibernate, JPA provides ORM Specificatoin
+   * And then later in Spring Boot Spring Data JPA was build on top of JPA Hibernate. And so now we will be using this in our code.
+   * There is also Spring JDBC, which is also build on top of JDBC like JPA Hibernate, But Spring Boot Data JPA uses JPA Hibernate only.
+   * So we will now learn about Spring Data JPA (Spring BOOT DATA)
+   * @Entity annotation is used to map table with Database.
+   * ----
+* Let's start with code in Spring Boot Data : Spring Data JPA
 
 
 
