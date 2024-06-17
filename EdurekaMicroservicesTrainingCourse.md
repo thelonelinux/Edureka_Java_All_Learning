@@ -311,9 +311,66 @@
 * Let's start with code in Spring Boot Data : Spring Data JPA
 * Spring Data JPA
    * We will be using MySql Database
-   * Sir will upload the code in LMS, check there and put in your github
-   * Too continu here only wiht code and detailer JPA Notes.
+   * Spring Data JPA is model provided by spring with various repositories.
+   * Repositories in Spring Data JPA
+      * CRUDRepository (This contains methods for below types of DBs ,ike we had ADO, etc in .net) (This contains Basic methods like Create, Read, Update, Delete Data Operations)
+         * JPA Repository - (Include JPA Methods for RDBMS Database like Oracle, Mysql, SqlServer) We will use mysql DB, in which we will work by using this repository
+         * Mongo Repository - For MongoDB Database
+         * Cassandra Repository - This is also NoSql like mongo above
+       * Crud Operations like Create, Read, etc wihch means insert, and select data, have already defined by default few methods to do data query in spring data JPA.
+       * So you don't have to add this method separately in the programs, however, we can have some user-defined methods to do operations according to our need also.
+* Separate Spring Project create for to implement sring data JPA working.
+   * similarly go to springBoot initializer.io (Name project as : springbootdatademo1, add dependency "Spring Data JPA") (Code added in same repo, you can check there)
+   * Remember JPA is the one which is giving us this pre-defined method to do crud operations on Sql Table.
+   * So open the project in eclipse or STS.
+   * Open the pom.xml file, there you can see along with "spring-data-starter-web" dependency there is one more dependency "spring-boot-starter-data-jpa"
+   * "spring-boot-starter-data-jpa" so this contains internally all the hibernate dependencies.
+   * So here this two dependencies, web for mvc and data for sql.
+   * Now goto src/main/java : there you will see the java class with the project name only, this has annotation as @SpringBootApplication, so this means this is your Spring boot application.
+   * Now let's open the MySql setup, DB IDE and get DB Connection configuration details., let's say we have Student DB.
+   * Now goto src/main/resources : there is this "application.properties" file, there you can add DB details like dbsource, username, password to make db connection.
+      * So here we have pre-defined properties name/variables to use to define this property. You can check in the code present in this repo
+   * Now we will create Contorller class. "StudentController" and put @RestController annotation. And inside this class we will make @GetMapping urls method
+   * So get all the list of all the students from this table we can do @GetMapping("/students"), and define method below it.
+   * But first let's create Student @Entity class. In JPA this class should be marked with @Entity. and mapped this with @Table(name="student"). hence table student is mapped with entity class
+      * Student.java: It's properties/data memebers will be mapped with columns. Example @ColumnName(name="columnName"), Example for firstName, add firstName. as private string firstName.
+      * also we have ID as primary key, so we indicate this with id annotation, @Id (Mapped to primary key column)
+  * So now going to StudentController, there you can call this student method to get all student in that mapping url method. see in code only.
+* Controller class, Service Class, Repository Class
+  * @Controller   =>calls=>  @Service  =>calls=>  @Repository  =>This will connect to DB=>   Database
+     * @Controller : Contains Url Mapping, takes request gives response.
+     * @Service : This contains the business logic, handles transactions and business logic
+     * @Repository : This contains JDBC, Hibernate code and Db Operations.
+ * Architecture is
+    * @Component (All our classes are component only, this means, which follows DI and IOC and can use this beans)
+       * @Controller
+          * @RestController
+       * @Service
+       * @Repository
+* So now studentController will call the StudentService. In order to call StudentService in Controller, we have to inject service bean in controller.
+* So to inject this bean, we will use @AutoWired annotation in Controller class. so code as @AutoWired and create StudentService studentService object.
+* So now let's create StudentService.java class. We will annotate this service class with @Service.
+* In this StudentService.java class create method, GetAllStudents. Inside this method we will call Repository class crud operation, so first get StudentRepository bean/object in this class.
+* so do @AutoWired in this class for StudentRepository. So now since StudentRepository class is not there, so we will create this StudentRepository Interface class.
+* StudentRepository interface extends JPARepository<Student, Integer>; So this takes Entity class Student and the primary key Data type of this class. which was ID which was integer.
+* So now using this bean studentRepository bean in StudentService class inside GetAllStudents method, just inside this method do studentRepository.(You will see many DB operations for student)
+* studentRepository.findAll(). Will return all the table content. These are pre-defined Db operations provided by JPA.
+* So this is all about the beauty of how fast we do DB operations in Spring Data JPA.
+* In simple JDBC, we have more complex, but here we do so easily.
+* Some complex methods we can define and make our own uesr defined operations on our table. that we see in next class.
+* Now we are done with the code part.
 
+* NOW let's understand the underlying principle of this code
+   * whenever spring-boot-starter-data-jpa is specified in pom. xml,
+   * spring boot auto configuration will create 3 beans automatically which is required for JPA/hibernate
+   * 1. Datasource bean: this bean is created by reading the properties specified in application.properties files. where we add our connecction string details of our datasoure and db.
+        * Datasource bean is a connection pool object, This is a db connection.
+           * Very Imp
+           * Previously we use to store our connection in Thread Pool, and whenever we get reqeust say one to 5 or more reqeust then we will create the connection and close them.
+           * this used to be the expensive task to do, Creating and closing the connection is expensive task. This was in Usual JDBC.
+           * BUT now we in JPA DataSource, we are creating the connection in Connection Pool. here in connection pool we can specify number of connection we want to connect in the
+           * application.poperties file only. Example this code : spring.datasource.initial-size=10 (Here it is saying initially we created 10 connection pool for our connection.
+           * So this we can specify in advance according to our need, acording to our client needs, who is sending the request.
 
 
 
