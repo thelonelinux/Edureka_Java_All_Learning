@@ -1,5 +1,5 @@
 # Edureka Microservices Certification Training Course
-
+SpringBoot is a foundation of Microservices
 ## Course Content: (Total 8 Modules, Sessions of 3 hours each) : [All the code and notes, ppt and images of microservice class are added, IMP***]
 ### 1. Introduction to Microservices
 * Class 1 Recording Learning
@@ -321,6 +321,7 @@
        * So you don't have to add this method separately in the programs, however, we can have some user-defined methods to do operations according to our need also.
 * Separate Spring Project create for to implement sring data JPA working.
    * similarly go to springBoot initializer.io (Name project as : springbootdatademo1, add dependency "Spring Data JPA") (Code added in same repo, you can check there)
+   * You need to also add mySQL Driver dependency if you are using mySQL driver to connect to database. check in the code, you can add manually also and save the pom.xml file to download.
    * Remember JPA is the one which is giving us this pre-defined method to do crud operations on Sql Table.
    * So open the project in eclipse or STS.
    * Open the pom.xml file, there you can see along with "spring-data-starter-web" dependency there is one more dependency "spring-boot-starter-data-jpa"
@@ -364,13 +365,36 @@
    * whenever spring-boot-starter-data-jpa is specified in pom. xml,
    * spring boot auto configuration will create 3 beans automatically which is required for JPA/hibernate
    * 1. Datasource bean: this bean is created by reading the properties specified in application.properties files. where we add our connecction string details of our datasoure and db.
-        * Datasource bean is a connection pool object, This is a db connection.
+        * Datasource bean is a connection pool object, This is a db connection. This contains multiple DB connection pool objects
            * Very Imp
            * Previously we use to store our connection in Thread Pool, and whenever we get reqeust say one to 5 or more reqeust then we will create the connection and close them.
-           * this used to be the expensive task to do, Creating and closing the connection is expensive task. This was in Usual JDBC.
+           * This used to be the expensive task to do, Creating and closing the connection is expensive task. This was in Usual JDBC.
            * BUT now we in JPA DataSource, we are creating the connection in Connection Pool. here in connection pool we can specify number of connection we want to connect in the
            * application.poperties file only. Example this code : spring.datasource.initial-size=10 (Here it is saying initially we created 10 connection pool for our connection.
            * So this we can specify in advance according to our need, acording to our client needs, who is sending the request.
+           * So here no new connection is created when client requests. Instead we will get the connection. Once they are used this connection, this connection will get close and get back to
+           * connection pool, so here it is not destroyed, here it is restored in connection pool to be used again.
+           * So here overall what is happening is : During the time of request, connection object is not getting created, instead getting the connection object from pool
+           * and once the connection is close, connection object is returned backed to pool, where to connection object can be used to serve others.
+           * So if you application required 500 connection then you can do initial-size as 500. so size of connection pool depends on load. Based on concurrent request. like 500 users at a time.
+           * there are several third party library to make this datasource bean connection pool
+           * spring uses Hikari Connection Pool library for connection Pool
+         * DataSource bean creates another bean call EntityManager bean
+    * 2 EntityManager bean : This is responsible for executing the db operations (like create, read, update, delete entity) --all the ORM operations are done here. example that findAll().
+       * From this EntityManager bean TransactionalManager bean is created.
+    * 3 TransactionalManager bean : Used to manager local transactions. will work with spring @Transactional.
+   * So these 3 beans are created as part of spring boot auto configuration.
+   * So now in StudentController class in the getAllStudent mapping. inside that method, do studentService.getAllStudent();
+   * so now run in tomcat server: localhost:8080/students (This will call controller mapping class which in turn will call service class which in turn will call repository and get details)
+   * repository (JPARepository) internally uses datasource bean, entitymanager bean and transactional manager bean, this will provide will all the default methods.
+   * For getStudentById we can have mapping with path variable as GetMapping("/student/{id}") and methond as getStudentByid(@PathVariable Integer id)
+   * and the url for this will be : localhost:8080/student/5  (This will give studnt with id=5) So this is how path variable or url variable way of mapping is done.
+   * Also let's create POST methond PostMapping("/studnet"), rest see in code. as we have to make it's function in service also, so just see there, that's all it is.
+   * and then post them using Postman and so on.
+   * So these are basic operations like findAll(), findByID() provided by JPA, so in next class we will make custom function for our table for non primary keys also.
+   * We will make Custom Queries in next class. like getting student by mail and first name, and etc etc. Not all are pre-defined so we can make on our own, we will do that in next class.
+   * ------ end of class 5 ------
+ 
 
 
 
