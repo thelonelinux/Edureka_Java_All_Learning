@@ -398,10 +398,56 @@ SpringBoot is a foundation of Microservices
 
 
 
-
-
-
 ### 6.Microservices Security
+* Class 6 begins
+* Custom Sql methods we will make today, continued from the previous lecture.
+* So just go to StudentRepositry class and create this custom method signature only, don't do any thing in method, JPA Internally will implement this method.
+  * //whenever the method starts with findBy, JPA Repository will query the
+  * //data based on properties specified after findBy name in the method
+  *	//this will internally generate an sql query to select by first_name and last_name columns
+  * 	public List<Student> findByFirstNameAndLastName(String firstName, String lastName);
+  * 	So this you can get in service and then map in controller and call this api. see code in repo.
+  * 	Other custom query you can see code in this repoitory only, not writing about it in here.
+* 	Custom Query also we can create for more complex implementation in repository class.
+  *  //this will select id and email when firstName and lastName are given
+  *	 //this is jpql/hql(hibernate query language) where this is associated with entity classnames and property name
+  * 	@Query("SELECT s.id,s.email FROM Student s where firstName=?1 and lastName=?2")
+  * 	public List<Object[]> getIdAndEmailByFirstAndLastName(String firstName, String lastName);
+  * 	Now this method is not by findby, Instead we are doing get, so this is our custom method with custom query
+  * 	Rest you call this in service class and then in controller class and you can see code there.
+  * 	In this @Query annotation you can write any query, even join queries, bcoz hql supports all this queries. Internall it will convert into sql query only.
+  * 	You only have to deal with entity class and it's properties name while making such queries.
+  * 	the queries gets executed during the runtime.
+  * 	So here we are returning an object array
+     * public List<Object[]> getIdAndEmailByFirstAndLastName(String firstName, String lastName);
+     * so for this Object array, we need to make another pojo, or say DTO class for student having only Id and Email, as that only we want as output in our query.
+     * So create a new Class StudentDTO.java : DTO means data to object.
+     * And use this to implement method in service class. Object[] array will passed as StudentDTO and we will get the list of id and email.
+  * So now run the code in tomcat server, everything will work fine.
+  * So this is it. Now starti with next topic.
+    
+  * PAGINATION
+    * Want to display only first 100 records, and then go to next page, then gives next 100 recrods and so on.
+    * So Pagination can be done, here only in the code, as JPARepository provides that also.
+    * So code this way
+       * Pageable method  add in JPARepository (you can check the code in code repo here, in same project)
+       * In service do that method with offset and limit
+       * In Controller call that with mapping.
+       * Url : localhost:8080/studentsByPage/3/7   (Starts from 3 and fetch next 7 row in the table, this is how offset limit works)
+       * once first offset is fetched, next offset will be from next row after that used or fetched records. Working explained below with the formula
+         * next record:
+         *  getOffset()+getPageSize()---next offset position
+         * getPageSize() -- limit position
+         * previous record getOffset ( )-getPageSize()
+         * getPageSize()--limit
+*
+* Done with Spring DATA JPA
+* Next topic will be caching now
+* CACHING .
+
+
+
+
 ### 7.Docker with Microservices using Spring Boot - I
 ### 8.Docker with Microservices using Spring Boot - II
 ### 9.Final Project
