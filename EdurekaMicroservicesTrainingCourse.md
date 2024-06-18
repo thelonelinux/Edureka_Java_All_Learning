@@ -444,7 +444,48 @@ SpringBoot is a foundation of Microservices
 * Done with Spring DATA JPA
 * Next topic will be caching now
 * CACHING .
-
+ * Spring Boot Caching
+  * caching happens in ram, which is faster than disk memory.
+  * Cache Data Working and Flow Explained
+     * Let's say a user requests for some data, then the Controller gets called which will call Service and this will call JPARepository.
+     * JPARespository will call database and get that data. But first it will store that data in Cache Memory (cache memory is an in memory data store (RAM) within the application from
+     * where the client has called. so this data will be also stored in the cache.
+     * Next time the client will call the same request, then first it will check if that data is present in cache memory of the application or not, if present then that data is sent to client
+     * this task will be fast as database call is skipped.
+     * In case the request data is not preesn in cache memory of the application, then first it will get data from database and then stores it in cache memory and then send data to client.
+   * So this all above logic is provided by the Spring Boot Caching, by just simple annotation and few line of code. In spring boot caching we don't have to write huge code to use that logic.
+   * @Cacheable annotation : This logic is implement by just this annotation.
+   * Project Code - springbootcachedemo(Let's create a separate maven project to implement this logic)
+     * Add extra dependencies "Spring Cache Abstraction", rest previous dependencies which you have added in previous code that you need to add here also. like data and web and mysql starter.
+     * You can do sql setup in application.properties. check in code only present in this repo there.
+     * We will be using product table. create Product class entity. And then ProductRepository and ProductController and ProductService.
+     * make getProductByID method, Also add message fetching the data in console, so whenever you call you will see that it is fetching from the database.
+     * So right now we have not added caching in our project.
+     * so just add @Cacheable annotation on service class above that method, just check the code in this repo.
+     * @Cacheable(value="product", key="#id")
+        * here value="product" is cache name and key is key, as in java spring boot caching, cache is stored in hashmap. HashMap is in memory data structure, cotaining key value pair.
+        * so whaterver id search you are passing, it is storing it as key, like student by id, then id will be the key for our cache valje and stored in hashmap.
+        * when it is first time called then only value will get stored in cache by creating the key value pair and store in the hashmap.
+        * this annotation will be implementing the whole cache logice explained above.
+        * Also in @SpringBootApplication, below this we have to also add @EnableCaching annotation to enable caching.
+        * So now run the project, you will see that second time it wont call db to get data, it will get the data from the cache.
+        * SCENARIO :
+           * Let's say now the data we are sending from cache to client. now someone at backend has update the data with new value, but in cache we have old data.
+           * So in this situation, we will be giving him outdated data.
+           * So we need to think about some mechanism, to sync data in cache and db.
+           * There is a mechanism to handle such cases, it is called TTL (Time to Live). In TTL, we set expiry to cache, whenever cache expires, data will be fetched from db and update in cache.
+           * Spring boot default cache uses concurrent hashmap data structure, and it won't have TTL. (So not advised for Prod Environment).
+           * So we need to Spring boot cache with  third party library like Redis, Memcache, EHcache etc to implement TTL. Redis is popular no sql distributed cache.
+           * EHCache also internally used HashMap only.
+           * EHCache Integration with Spring Boot Cache : 
+              * We will add two library/dependency in our current cache project to use this EHCache in our project. org.ehcache and javax.cache. this two libraru added, check code in repo.
+              * After this in application.properties we will override spring boot default cache with EHCache, so code will be like
+              * #we are overriding spring boot default cache to ehcache
+              * spring.cache.jcache.config=classpath:ehcache.xml
+              * Also this ehcache.xml file will be generated. And will have value matched with the alias used in our project only. This contains cache configuration.
+              * Also you can see there is TTL also, like 20 seconds. for now just to show you how it expires and gets updated. Else we can put hours and days alos.
+            
+    
 
 
 
