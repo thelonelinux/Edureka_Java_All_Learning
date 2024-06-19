@@ -421,7 +421,10 @@ SpringBoot is a foundation of Microservices
   * 	So here we are returning an object array
      * public List<Object[]> getIdAndEmailByFirstAndLastName(String firstName, String lastName);
      * so for this Object array, we need to make another pojo, or say DTO class for student having only Id and Email, as that only we want as output in our query.
-     * So create a new Class StudentDTO.java : DTO means data to object.
+     * So create a new Class StudentDTO.java : DTO means data to object. DTO class are used for response request mapping, Here this is not entity class.
+     * entity class is used for ORM Mapping, using whihc our table queries methods are pre-build by Repository class.
+     * So DTO class is normal POJO (Plain java class) used only when we want to give some response by mapping this object class.
+     * and Entity class is the Class which will take care of ORM Mapping.
      * And use this to implement method in service class. Object[] array will passed as StudentDTO and we will get the list of id and email.
   * So now run the code in tomcat server, everything will work fine.
   * So this is it. Now starti with next topic.
