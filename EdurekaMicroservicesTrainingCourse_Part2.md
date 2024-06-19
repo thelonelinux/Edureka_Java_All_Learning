@@ -25,7 +25,7 @@
 * --- END OF CLASS 6 -------
 
 
-## 7.Docker with Microservices using Spring Boot - I
+## 7.Docker with Microservices using Spring Boot - I (Actually includes order service, service registry and discovery, and load balancer)
 * Lecture 7 class starts
 * Some doubts discussion :
 * @ComponentScan is used to scan all the beans under the same pckage project. What we have to do to include other package/project beans.
