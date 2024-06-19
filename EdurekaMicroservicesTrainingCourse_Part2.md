@@ -10,7 +10,7 @@
       * 3. Customer Microservice (Spring Boot Project)
       * 4. Inventory Microservice (Spring Boot Project)
   * So for this 4 spring boot projects we will have 4 spring boot servers running this project. So this is the building block of microservices.
-  * In production, we need to scale(expanding to larger way) these microservices. So for that we need below patterns tools.
+  * In production, we need to scale(expanding to larger way) these microservices. We can scale these services using spring Cloud, other patterns we use in Microservices are as follows;
       1. service registration and discovery
       2. service or client side load balancing
       3. resiliency using / circuitbreaker
