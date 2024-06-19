@@ -41,9 +41,23 @@
 
 * So now we can start with Microservice Project
 * SERVICE REGISTRATION AND DISCOVERY
+* See video, includes code and concept
 
+* LOAD BALANCER
+* See videos, including code and concept
+
+
+* RESILIENCY and CIRCUIT BREAKER
+* Only concepts, code in next class
+---- END OF class 7 (Need to write notes though, will do later)-----
 
 
 
 ## 8.Docker with Microservices using Spring Boot - II
+* Start of class 8
+* RESILIENCY and CIRCUIT BREAKER
+
+
+
+
 ## 9.Final Project (Here some additional classes were taken to complete the other topics of this Training)
