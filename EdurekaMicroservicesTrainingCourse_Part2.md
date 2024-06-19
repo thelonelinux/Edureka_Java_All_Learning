@@ -27,7 +27,22 @@
 
 ## 7.Docker with Microservices using Spring Boot - I
 * Lecture 7 class starts
-* 
+* Some doubts discussion :
+* @ComponentScan is used to scan all the beans under the same pckage project. What we have to do to include other package/project beans.
+* for that we have below code
+       * com.myapp -- base package
+        *  @Configuration
+        *  @ComponentScan class A scan for the spring beam @Component present in com. myapp example beans like com. mypp. controller com. myapp. service.
+        *  Now we have com.newapp.services. then we can include this in below way
+        *  @ComonenScan (basePackages={" com. myapp", "com. newpp"})
+        *  Similarly for SpringBootApplicaiton we do sme thing to include other package/Project
+        *  @SpringBootApplication=@Configuration + @ComponentScan +@EnableAutoConfiguration
+         * @SpringBootApplication(scanBasePackages={"com.myapp", "com. newapp" })
+
+* So now we can start with Microservice Project
+* SERVICE REGISTRATION AND DISCOVERY
+
+
 
 
 ## 8.Docker with Microservices using Spring Boot - II
