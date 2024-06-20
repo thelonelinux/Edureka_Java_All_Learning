@@ -79,9 +79,37 @@
 
 ## 8.Docker with Microservices using Spring Boot - II
 * Start of class 8
-* RESILIENCY and CIRCUIT BREAKER
+* RESILIENCY and CIRCUIT BREAKER (Not be adding in very detail. later you can check video for in detail)
+       * dependencies we will add resilience4j only, see in pom.xml file.
+       * Cirucit breaker we will add this in orderserviceloadbalancer service project only, we will add the code in orderserviceloadbalancerController.java class only
+       * We will add there annotation as @circuitBreaker, rest see the code. In this annotation only we will add some method which will be called when circuit is broken.
+       * See different configuration for circuit breaker in Resiliency document, they will do different task for circuit break method as per our requirement.
+       * We will add these configuration in yml file.
+            * Example : sliding-window-size=10
+                           * Means our circuit breaker will maintain a window of the records of last 10 calls. as we have mentioned size = 10.
+                      * minimum-number-of-call
+                           * Atleast 10 calls must fail to start the circuit breaker, and other confiuration details you can check in video later.
+                      * permitted-number-of-call-in-half-open-state
+                           * Here is three request check is done during half open state and sent to ms3. if this time all 3 request works without error, then circuit will move from
+                           * half open state to close state and our cirucit will again start working fine. the request will be send by client only. and if next 3 are good, close the circuit
+                           * and everything is fine now, circuit is good. so this is  also one of the configuration.
+                      * sliding-window-type=COUNT
+                           * So this we do as count based, we can also have TIME based to deal with circuit breaker details.
+       * So we can also add cache seding respose in our circuit breaker method. that we can do later,
+* So this is all in resiliency and circuit breaker.
+* for very detail you can see the vidoe and code.
+* Roight now I think this much will do, until you are directly working someday in Resiliency and cirucit breaker in you live code, then that time come here and check
 
+* So now we will go with next topic
 
+* So for now we have completed first three patterns of Microservice
+     * 1. Service Registry and Discovery
+     * 2. Load balancer
+     * 3. Resiliency and circuit breaker
+
+* Now we will see next topic in this
+
+* API GATEWAY
 
 
 ## 9.Final Project (Here some additional classes were taken to complete the other topics of this Training)
