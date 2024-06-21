@@ -109,7 +109,30 @@
 
 * Now we will see next topic in this
 
-* API GATEWAY
+* API GATEWAY (Much you can see in detail by watching the video and again and write in detail about it - for now writing in lay man word in brief)
+       * API Gateway is also a spring boot microserviec project will just connect with following services
+            * orderserviceloadbalancer
+            * Productservice
+            * UserSevice
+       * So this is just like one path definer, this time localhost will be common and will be of ApiGateway service only,
+       * Registry will be one only. where all these services will be registered, API Gateway will also make use of this registry only to find the services and there path
+       * here OrderServiceLoadBalancer is that same project which we implemented last class. So this loadBalanceer is also using registry service only to manager orders services internally
+       * So registry service can be used by any service. There will be only one registry service. We will define all three above services in this registry service only.
+       * APIGateway also takes care of LoadBalancer in it. It also take care of security. (Security part we will discuss later)
+       * We could have also directly called orderService only instead of orderServiceLoadBalancer, so this way also it works but internal load balancer would not work. We have to then take
+       * help of apiGateway load balancer only. So this is how it is.
+       * Eureka server is registry service only.
+       * So we will keep apiGatewayService in public subnet and other service in private subnet. so that no one else can access directly, but only via Api-gateway.
+  * So this is all about API Gateway
+ 
+* No we will do new topic
+* SPRING CLOUD CONFIG (Much you can see in detail by watching the video and again and write in detail about it - for now writing in lay man word in brief)
+* 
+  
+
+
+
+  
 
 
 ## 9.Final Project (Here some additional classes were taken to complete the other topics of this Training)
