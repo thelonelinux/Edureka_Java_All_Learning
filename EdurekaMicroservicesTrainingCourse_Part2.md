@@ -132,7 +132,7 @@
        * As there can be diffrent environment like stage, deve and Prodcution. So properties will be different for each environment.
        * So if we have let's say 17 microservice then we have to maintain like 17*3 = 21 properties files. so it is bit a lot of work. so we will keep all our properties files in one location
        * In Spring cloud config in github. And use bootstrap.settings file to connect with these files.
-       * When the service starts that time it will take the data from config file and later keep it in cacched, so cached later can be updated if some changes are done, we have code for that too
+       * When the service starts that time it will take the data from config file and later keep it in cache, so cached later can be updated if some changes are done, we have code for that too
        * @Values is used to search property files for each service from the config server.
   * Next class we will do the coding of this task
  
@@ -145,8 +145,47 @@
 
 
 ## 9.Final Project (4 Class in one)
-### CLASS 9
-*
+### CLASS 9 (Config Server Implementation)
+* CONFIG SERVER (For more detail see video and code and write detail notes later)
+* In Lay man words
+  * ConfigServer Spring project we will build.
+  * In POM.xml we have config-server dependency added. There is actuator also, we will see in next topic, It is for monitoring health check. Memory, cpu usage and all that.
+  * In Config server app we will define the configuration to connect to github. See in application.yml file to see details there.
+  * Sir has created all the application.properties file for each environment for each service in that repo (Testprivaterepo) you can check the link in the code repo.
+  * Simce this is private repo so we need to generate ssh key to get authentication to connect with this repo. In notes.txt file alongside properties file there it is present on
+  * how to generate ssh key.
+        * #connecting to private git repo
+        *  generate private and public ssh keys
+        *  ssh-keygen -m PEM -t ecdsa -b 256
+        *  it will be stored in c:\users\hp\.ssh\
+        *  copy the private key in application.yml
+        *  copy the public key in github repo in deploy key
+    * The match between public key and private key will authenticate the user.
+   
+* Now let's connect this config server with user service. for that let's add bootstrap.yml in user service. Also add @EnableConfigServer in user service spring boot application.
+* In bootstrap file use same url port that we are using in config server. And then also add application name and profile for wihch environment you want.
+* This we all add in spring.cloud.config properties type in user service bootstrap.yml file.
+* In configserver private repo, there in user properties file, we have "myKey" value defined there, which we will inject in our userController with @Value annotation.
+* This will search for our file in repo and try to link with that. It will search all properties file with user service name.
+* So now run the config server and then user service project, once the connection will made you will see that port number is overriden from local properties file to private repo
+* settings file. in local it was 5400 and in github properties file it is 5600. so now user service will run in 5600. as remote properties file has overrriden the properties.
+* SO OVERALL IT IS LIKE THIS
+       * config server will connect with github private repo with ssh key in it's application.properties file
+       * user service will connect with config server using bootstrap.yml file using the url of config server.
+       * So now when the connection is made and user service is run, we can see the properties being fetched from private repo of github.
+       * but if we now change the properties file values in github. we will see it is not changing in user service, as we are getting cached file. so we need to restart the services
+       * But that is not a good practise. so for that we have Actuator library
+            * ACTUATOR LIBRARY in Spring boot (Mainly used for checking health of the spring boot project )
+                 * Add this library in both config server and user service
+                 * And then implement POST/ Request
+                      * /actuator/refresh => This will at backend update/refresh the cache without restarting the microservice.
+                 * coding part to add actuator
+                      * In usersController add @RefreshScope : So this will update the custom properties which are injected through @Value annotation.
+       * Now again start all the services.
+       * Now in postMan do localhost:2300/actuator/refresh and run it after making changes in the git properties file. You will see the cache will get updated.
+       * this 2300 port is from that properties file only, which is used by user service by overridden, so in that only POST will work, as post logic defined in user service.
+       * So this is all you have to do to update the caches.
+       * But now we also need some batch service to run this POST reqeust which is updating the cache data for users service.
 
 
 ### CLASS 10
