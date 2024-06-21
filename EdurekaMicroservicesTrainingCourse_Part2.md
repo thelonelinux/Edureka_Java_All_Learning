@@ -186,6 +186,19 @@
        * this 2300 port is from that properties file only, which is used by user service by overridden, so in that only POST will work, as post logic defined in user service.
        * So this is all you have to do to update the caches.
        * But now we also need some batch service to run this POST reqeust which is updating the cache data for users service.
+       * So in video sir has shown we can create any random rest call spring project. there add this post batch job, and we can use some spring scheduler, which will run this api
+       * after certain interval and keeps our cache data updated
+  * So that's all it is.
+  * Dev/Stag/Prod profile we can pass as an argument in java command line while calling from the command prompt while running the java jar file.
+  * Argument of that stirngp[] args in the main class. that you can pass from command prompt. you know the command.
+  * $$ java -Dprofile.active=DEV userservice.jar (for dev environment)
+  * $$ java -Dprofile.active=PROD userservice.jar (for prod environment)
+* So done with spring config server
+* 
+* Now next topic
+* 
+* SPRING BOOT ACTUATOR - we check about this above also
+* but it has more advantages (It checks the health monitor of the spring boot applications.)
 
 
 ### CLASS 10
