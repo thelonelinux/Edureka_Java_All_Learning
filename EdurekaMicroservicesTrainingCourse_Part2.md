@@ -197,8 +197,12 @@
 * 
 * Now next topic
 * 
-* SPRING BOOT ACTUATOR - we check about this above also
+* SPRING BOOT ACTUATOR - we check about this above also (For more detail check in video only)
 * but it has more advantages (It checks the health monitor of the spring boot applications.)
+* In orderserviceloadbalancer add micrometer dependency and then add management endpoints in settings file
+* Now run this orderserviceloadbalancer and regsitry service, localhost:6200/actuator/prometheus.
+* You will see all the details of the system.
+* Later you will see in docker using grafana how we can make this in graph representation.
 
 
 ### CLASS 10
