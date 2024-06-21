@@ -77,7 +77,7 @@
 
 
 
-## 8.Docker with Microservices using Spring Boot - II
+## 8.Docker with Microservices using Spring Boot - II (We did Resiliency and Circuit breaker, API Gateway and then Spring Cloud Config - Config Server)
 * Start of class 8
 * RESILIENCY and CIRCUIT BREAKER (Not be adding in very detail. later you can check video for in detail)
        * dependencies we will add resilience4j only, see in pom.xml file.
@@ -127,7 +127,16 @@
  
 * No we will do new topic
 * SPRING CLOUD CONFIG (Much you can see in detail by watching the video and again and write in detail about it - for now writing in lay man word in brief)
-* 
+       * In layman words
+       * This just stores the application.properties or application.yml file in centralized location in github,
+       * As there can be diffrent environment like stage, deve and Prodcution. So properties will be different for each environment.
+       * So if we have let's say 17 microservice then we have to maintain like 17*3 = 21 properties files. so it is bit a lot of work. so we will keep all our properties files in one location
+       * In Spring cloud config in github. And use bootstrap.settings file to connect with these files.
+       * When the service starts that time it will take the data from config file and later keep it in cacched, so cached later can be updated if some changes are done, we have code for that too
+       * @Values is used to search property files for each service from the config server.
+  * Next class we will do the coding of this task
+ 
+* --- END OF CLASS 8 ------
   
 
 
@@ -135,4 +144,11 @@
   
 
 
-## 9.Final Project (Here some additional classes were taken to complete the other topics of this Training)
+## 9.Final Project (4 Class in one)
+### CLASS 9
+*
+
+
+### CLASS 10
+### CLASS 11
+### CLASS 12
