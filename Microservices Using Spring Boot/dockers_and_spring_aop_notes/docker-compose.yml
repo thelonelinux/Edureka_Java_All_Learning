@@ -1,0 +1,14 @@
+version: '2'
+services:
+  orderserviceloadbalancer:
+    image: orderserviceloadbalancer
+    build:
+      context: ./orderservicelb
+      dockerfile: Dockerfile
+    network_mode: host
+  orderservice:
+    image: orderservice
+    build:
+      context: ./orderservice
+      dockerfile: Dockerfile
+    network_mode: host

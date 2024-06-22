@@ -1,0 +1,16 @@
+version: '2'
+services:
+  orderserviceloadbalancer:
+    image: orderserviceloadbalancer
+    build:
+      context: ./orderservicelb
+      dockerfile: Dockerfile
+	#ports:
+    #  - "4000:4000"
+    network_mode: host
+  orderservice:
+    image: orderservice
+    build:
+      context: ./orderservice
+      dockerfile: Dockerfile
+    network_mode: host

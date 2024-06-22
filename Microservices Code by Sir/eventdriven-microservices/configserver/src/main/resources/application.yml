@@ -1,0 +1,35 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      allow-override: true
+      override-none: true
+      allowOverride: true
+      overrideNone: true
+      overrideSystemProperties: true
+      server:
+        git:
+          uri: git@github.com:kiranresearch2022/testprivaterepo.git
+          ignore-local-ssh-settings: true
+          private-key: |
+                         -----BEGIN EC PRIVATE KEY-----
+                         MHcCAQEEIK/2f1TOB565lCBxZtaqmbxz2E75Wu3xXzgkDV/RiIsAoAoGCCqGSM49
+                         AwEHoUQDQgAEsR5AiNRIFWoItpwHajdKPdTbut4E3W+xxX45JVJjpRtbgvZS+8CW
+                         MMUXaVgQ+oYlLDTmzb3EAHUTfKu1npifaA==
+                         -----END EC PRIVATE KEY-----
+          clone-on-start: true
+          default-label: master
+management:
+  security:
+    enabled: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+  instance:
+    appname: configserver
+    leaseRenewalIntervalInSeconds: 5 #not recommended in production
+          

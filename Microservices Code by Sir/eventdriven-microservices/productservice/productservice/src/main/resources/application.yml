@@ -1,0 +1,11 @@
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/ # this is the address of Eureka server
+  instance:
+    appname: productservice
+
+spring:
+  application:
+    name: productservice

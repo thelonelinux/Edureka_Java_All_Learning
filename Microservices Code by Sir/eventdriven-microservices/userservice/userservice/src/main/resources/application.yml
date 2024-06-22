@@ -1,0 +1,15 @@
+server:
+  port: 5500
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: http://34.100.216.14:1111/eureka/ # this is the address of Eureka server
+  instance:
+    prefer-ip-address: true
+    appname: userservice
+
+spring:
+  application:
+    name: userservice

@@ -1,0 +1,27 @@
+server:
+  port: 3800
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/ # this is the address of Eureka server
+  instance:
+    appname: apigateway
+
+spring:
+  application:
+    name: apigateway
+  cloud:
+    gateway:
+      routes:
+      - id: ordermodule
+        uri: "http://localhost:6200/orders"
+        predicates:
+        - "Path=/orders/**"
+      - id: productmodule
+        uri: "http://localhost:6000/products"
+        predicates:
+        - "Path=/products/**"
+      - id: usermodule
+        uri: "http://localhost:5500/users"
+        predicates:
+        - "Path=/users/**"

@@ -1,0 +1,6 @@
+#connecting to private git repo
+generate private and public ssh keys
+ssh-keygen -m PEM -t ecdsa -b 256
+it will be stored in c:\users\hp\.ssh\
+copy the private key in application.yml
+copy the public key in github repo in deploy key
