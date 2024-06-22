@@ -145,7 +145,7 @@
 
 
 ## 9.Final Project (4 Class in one)
-### CLASS 9 (Config Server Implementation)
+### CLASS 9 (Config Server Implementation (single repo for application.settings file, Spring boot Actuator : health monitoring, Zipkin - API tracing and debugging )
 * CONFIG SERVER (For more detail see video and code and write detail notes later)
 * In Lay man words
   * ConfigServer Spring project we will build.
@@ -203,6 +203,23 @@
 * Now run this orderserviceloadbalancer and regsitry service, localhost:6200/actuator/prometheus.
 * You will see all the details of the system.
 * Later you will see in docker using grafana how we can make this in graph representation.
+
+* Now Next topic
+
+* API TRACING with Zipkin and Spring Cloud Sleuth
+       * So this is used for debugging purpose in our microservices. This will trace the reqeust-response in our microservices
+       * So all we have to do is in all micriservices add spring cloud sleuth and zipkin dependencies (See in code of orderserviceloadbalanceer and in order service pom.xml file)
+       * And we have to download Zipkin server separately and run this zipkin server from command prompt. Check the port in which this zipkin server is running.
+       * Now run the orderserviceloadbalancer and orderservice. Send request response to this service.
+       * Now open the zipkin server with it's port. there you can see whatever request response has been send in orderservice and orderserviceload balancer, the details are present there.
+       * So this is how it is doing tracing of our microservice request-response
+       * No code changes here, Just add the required dependencies in the microservice you want to trace, and that service will send it's log to separate Zipkin server.
+       * Zipkin is open source, we have other tools like jaeggaer, datadog etc to do API tracing
+  * So this is all it
+    
+* Now we will be doing next topic
+
+* SPRING SECURITY (Basic auth, OAuth, JWT)
 
 
 ### CLASS 10
