@@ -421,7 +421,10 @@ SpringBoot is a foundation of Microservices
   * 	So here we are returning an object array
      * public List<Object[]> getIdAndEmailByFirstAndLastName(String firstName, String lastName);
      * so for this Object array, we need to make another pojo, or say DTO class for student having only Id and Email, as that only we want as output in our query.
-     * So create a new Class StudentDTO.java : DTO means data to object.
+     * So create a new Class StudentDTO.java : DTO means data to object. DTO class are used for response request mapping, Here this is not entity class.
+     * entity class is used for ORM Mapping, using whihc our table queries methods are pre-build by Repository class.
+     * So DTO class is normal POJO (Plain java class) used only when we want to give some response by mapping this object class.
+     * and Entity class is the Class which will take care of ORM Mapping.
      * And use this to implement method in service class. Object[] array will passed as StudentDTO and we will get the list of id and email.
   * So now run the code in tomcat server, everything will work fine.
   * So this is it. Now starti with next topic.
@@ -483,9 +486,24 @@ SpringBoot is a foundation of Microservices
               * #we are overriding spring boot default cache to ehcache
               * spring.cache.jcache.config=classpath:ehcache.xml
               * Also this ehcache.xml file will be generated. And will have value matched with the alias used in our project only. This contains cache configuration.
-              * Also you can see there is TTL also, like 20 seconds. for now just to show you how it expires and gets updated. Else we can put hours and days alos.
+              * Also you can see there is TTL also, like 20 seconds. for now just to show you how it expires and gets updated. Else we can put hours and days also.
+              * Adding CacheEventListener class to check how the cache is create expired etc. to check TTL etc. You can see in the code. So this listeners is in that ehcahce.xml file also
+              * Also there is heap memory you can see, the size of heap you want. So there you can see 2000 objects are stored in the meomry.
+              * So now run the program, and after 20seconds again call that, you will see new value got stored in the cache.
+     
             
-    
+* So this is all it.
+* Now we will start with microservices, and we can now understand why spring boot is preferred choice to implement microservices.
+* Now Start with MIRCROSERVICES
+   * Microservices need separate compute environment (Tomcat server) - embedded tomcat servers.
+   * Need restful web services layer for exporting rest api's
+   * caching
+   * monitoring
+   * Quicker developoment and deployment - agile methods
+ * So spring boot provides all this features. so we use springboot for microservices.
+   
+* So now we will see a Ecommerce application to implement microservices.
+* 
 
 
 
