@@ -248,7 +248,19 @@
 
 ### CLASS 11
 * SPRING SECURITY using OAUTH
-* 
+  * OAuth is Open Authentication, which means like you can login by using google login, or facebook or github login, In that case the client (that website) will have access to your google mails
+  * So this is Open Authentication. Here client ID and client secret are generated to be used by third party website from google to validate login and generate OAuth token.
+  * There are different flows in OAuth, We will focusing mainly on CLIENT CREDENTIALS FLOW for Microservices. (To see other flows please see video class only)
+    * CLIENT CREDENTIALS FLOW for Microservices : This is for service to service authentication.
+         * Similar flow for this also, check in video only, how it flows, token etc.
+         * In lay man word flow will be like this :
+              * Let's say microservice client will call OAuth Server  (Google, github login) by giving client id and client secret to it.
+              * Now OAuth server will give back Oauth token to client microservice
+              * Now client microservice will send this token to resource server (which client is trying to access it's APIs etc)
+              * Now resource server will send this Oauth token given by client microservice and validate with OAuth server, so here introspection is done by resource server for oauth token
+              * Once the validation is successful, Client Microservice will be able to access the Resource servers api's etc.
+              * If token not valid then token not valid message to send and Client Microservice will be unable to access resource apis.
+              * so this is CLIENT CREDENTIALS FLOW in microservice.
 
 
 
