@@ -5,6 +5,8 @@ Learning Microservices with Springboot in Edureka will be enough to do starter a
 Anyways starter are not required. In Edureka Microservices, Starter are explained, so leave starter and start with spring boot only
 For IOC and DI, you can see bit spring framework working example with code, that too explained in spring boot microservice lecture.
 
+### : Git issue : When cloning, first merge the current branch to Main, then only clone in git bash
+### : Git Issue : Also when doing $$ git add . We are getting errors like- LF will be replaced by CRLF the next time Git touches it (To resolve that issue just write this command next, it will add  $$git config --global core.autocrlf true)
 
 ## Project Build Up from this Youtube Playlist
 * https://www.youtube.com/playlist?list=PLXXDXNrmlgEVMp_dPpVzWvylBAs52CxLw
