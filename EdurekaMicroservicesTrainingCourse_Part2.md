@@ -229,6 +229,7 @@
        * So this password should be in hashcode form using MD5 (Message Digest). Password should not be stored in plain text. MD5 form can't be reversed like encrypted code.
        * So password are stored as irreversable hash code rather than in plain text or encrypted form. so when the user enter the user name and password, password is first encoded via MD5
        * and then compared with the MD5 present in the table, and then it will login if both hash are same. so this is how it works. Password is encrypted using BCrypt.
+       * To use as plain password in db table we will use {noop} see videos to understand more.
        * encoder code how it works you can see in java class PasswordEncoder.java, And you can pick that and put in table as hash rather than plain.
        * So one we add all the details, we will run/add some code in SecurityConfig.java class. that will take care of both authenticatin and also have authorization check there and filteration
        * .httpBasic() : This code in that code will help us to open small window to login user and password when we try to open or send request to that service.
@@ -261,7 +262,32 @@
               * Once the validation is successful, Client Microservice will be able to access the Resource servers api's etc.
               * If token not valid then token not valid message to send and Client Microservice will be unable to access resource apis.
               * so this is CLIENT CREDENTIALS FLOW in microservice.
+          * So now we will do code project design to implement this
+          * CODE PART:
+            * We will have our own Spring Server Authorization microservice instead of google,github which will access to oauth_client_details table
+            * We will have Client Microservice User which will try to authenticate like the same above flow, It will send POST oauth/token with parameter user id and user secret as request data.
+            * Once the validation is done we will able to access API gateway, API gateway is that same project which will have orderserviceloadbalancer, product service, which we have developed.
+            * OAuth token is also of two types
+                 * Opaque token (Simple token like normal password)
+                 * JWT token (Heavy token where we store the client side state information) (This contains header,body and signature)
+             
+                   
+* Project program with OAuth jwt token
+  * Sir has already created the project, also see in this repo to understand more about the code.
+  * check in code SecurityConfig.java, there you will also find comment sir has written in the code to understand.
+  * Security filter chain is also used here. You will also fine table sql script for datasource to that oauth_client_details.
+  * Client Microservice is like calling Post from Postman with details to run the project. You can see in video lecture only.
+  * You will get the JWT token as postman response which you can check in jwt.io website to see parts of this JWT token.
+  * Now using this token call apis like localhost://orders/ in postman we have authorization optiion, add first Bearer and then space and then token and run, you will get response.
+  * springcloudgatewayjwt : this project also extact and check code there in this repo, it is present there
+  * So this is the whole flow and code
+ 
+    
+* So security part is also completed.
+* Now we will be starting with dockers.
 
+* DOCKERS
+*           
 
 
 ### CLASS 12
