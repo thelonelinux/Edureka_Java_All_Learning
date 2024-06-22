@@ -145,7 +145,7 @@
 
 
 ## 9.Final Project (4 Class in one)
-### CLASS 9 (Config Server Implementation (single repo for application.settings file, Spring boot Actuator : health monitoring, Zipkin - API tracing and debugging )
+### CLASS 9 (Config Server Program (single repo for application.settings file, Spring boot Actuator: Health monitor, Zipkin - API tracing and debugging, Spring Security - Basic Auth (Authentication and Authorization)
 * CONFIG SERVER (For more detail see video and code and write detail notes later)
 * In Lay man words
   * ConfigServer Spring project we will build.
@@ -220,8 +220,36 @@
 * Now we will be doing next topic
 
 * SPRING SECURITY (Basic auth, OAuth, JWT)
+  * We will first check with code and notes (More detail you can re-check code and lecture video)
+  * In Lay Man words
+       * We did BASIC AUTH Spring Security, Sir has already made the codes ready, dependencies were added.
+       * We will be doing authentication (User log in with user name and password) and authorization (what kind of access that user should have)
+       * So we will have two tables (Userauthentication and UserAuthorization) in our securityDatabase in mysql which will contain user details and password.
+       * authorization based on the roles.
+       * So this password should be in hashcode form using MD5 (Message Digest). Password should not be stored in plain text. MD5 form can't be reversed like encrypted code.
+       * So password are stored as irreversable hash code rather than in plain text or encrypted form. so when the user enter the user name and password, password is first encoded via MD5
+       * and then compared with the MD5 present in the table, and then it will login if both hash are same. so this is how it works. Password is encrypted using BCrypt.
+       * encoder code how it works you can see in java class PasswordEncoder.java, And you can pick that and put in table as hash rather than plain.
+       * So one we add all the details, we will run/add some code in SecurityConfig.java class. that will take care of both authenticatin and also have authorization check there and filteration
+       * .httpBasic() : This code in that code will help us to open small window to login user and password when we try to open or send request to that service.
+       * DaoAuthenticationProvider this and other beans used in SecurityConfig.java are pre-build class by java spring boot security dependencies.
+       * use csrf also explained, check it in video only.
+* So this is all it
+
+* Next class we will be doing OAuth Authentication and JWT Security
+
+* --END OF CLASS 9 ---------
+
+### CLASS 10 (Sir was out due to personal reasons - check from class 11, nothing taught here)
+* This is 1 Hour class, unlike the previous ones where we used to have 3 hours classes in all of them.
+* There is no class, Sir was absent due to personal reasons
+* Just some QnA happened, that too for 15 minutes. not to learn anything in this class for now.
 
 
-### CLASS 10
 ### CLASS 11
+* SPRING SECURITY using OAUTH
+* 
+
+
+
 ### CLASS 12
