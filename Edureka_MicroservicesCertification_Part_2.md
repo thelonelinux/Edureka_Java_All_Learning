@@ -247,7 +247,7 @@
 * Just some QnA happened, that too for 15 minutes. not to learn anything in this class for now.
 
 
-### CLASS 11
+### CLASS 11 (Spring Security - for Authentication login, Docker - to deploy our microservice in containers)
 * SPRING SECURITY using OAUTH
   * OAuth is Open Authentication, which means like you can login by using google login, or facebook or github login, In that case the client (that website) will have access to your google mails
   * So this is Open Authentication. Here client ID and client secret are generated to be used by third party website from google to validate login and generate OAuth token.
@@ -300,7 +300,7 @@
 
 
 
-### CLASS 12
+### CLASS 12 (Docker - For Container in AWS, Swagger - For checking all the apis present in microservice, Prometheus, Grafane - to Visualize Metric like CPU, ram usage)
 * DOCKER
   * IN LAYMAN WORDS (For detail - please check in video only)
   * Sir used AWS EC2 Instance of Ubuntu as a host machine
@@ -316,6 +316,27 @@
   * This is only used to check what all api's call are preesnt in our microservice,
   * You can check by opening this url in the browser => localhost://6200/swagger-ui/index.html
   * A UI will open up, there you will see all the list of get, post thing you are doing in that current microservice in orderserviceloadbalancer.
+ 
+* PROMETHEUS
+  * IN LAYMAN WORDS (For detail - please check in video only)
+  * Visualizing Spring Boot Metrics from Prometheus Dashboard in Graph or better manner.
+  * This is that metric displaying dashboard which we learn previously in Actuator in previous classes
+  * This will give you the stats of your machine, RAM, CPU in better format
+  * So here we will run Prometheus image in separate docker Container in AWS EC2 Instance only and then run the docker container where our microservices are there.
+  * In it's docker file we will set port of orderserviceloadbalancer, so it will pull the metric of this orderserviceloadbalancer after every 5 minutes, specified in it's docker file.
+  * It has time series DB where metric details after every certain interval is stored.
+  * And now open this apis. You will see prometheus Dashboard.
+  * GRAFANA
+    * Grafana is better way to show all the metrics,
+    * So run this Grafana also in the Docker Container in some port . we will do this in AWS EC2 instance only.
+    * Here we will add prometheus api and visualize the metrics in graph format.
+   
+* SPRING AOP
+  * 
+
+
+* ------ END OF CLASS 12 ------
+* ------ END OF TRAINING CUM CERTIFICATION ------
 
 
 
