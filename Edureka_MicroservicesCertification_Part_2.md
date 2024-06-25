@@ -287,7 +287,41 @@
 * Now we will be starting with dockers.
 
 * DOCKERS
-*           
+  * IN LAYMAN WORDS (More detail see lecture video)
+  * Docker is an Application based Container that contains a jar file, a docker file, and required libraries like jdk to run that single application in the host machine.
+  * We can have multiple container in a machine
+  * Docker engine take cares for all this container by some commands.
+  * Container is not VM, VM has it's own OS, Container Don't    
+
+* In next class we will run our microservice in docker containers.
+* 
+* -- END of CLASS 11 --
+
+
 
 
 ### CLASS 12
+* DOCKER
+  * IN LAYMAN WORDS (For detail - please check in video only)
+  * Sir used AWS EC2 Instance of Ubuntu as a host machine
+  * Installed Docker in this EC2 Ubuntu Instance
+  * Copied jar file of our RegistryServie, LoadBalancerOrderService, and LoadBalancer microservice from his local windows machine to EC2 Ubuntu Machine using SFTP file transfer software
+  * Check video lecture on how to do jar file transfer.
+  * After creating the Docker File for each application jar file and run this appication microservice in separate container
+  * Used the public IP to request the service and it was working fine, all the microservices were working fine in the container.
+ 
+* SWAGGER
+  * IN LAYMAN WORDS (For detail - please check in video only)
+  * Sir just added the openAPI dependencies in the orderserviceloadbalancer to add swagger in our microservice
+  * This is only used to check what all api's call are preesnt in our microservice,
+  * You can check by opening this url in the browser => localhost://6200/swagger-ui/index.html
+  * A UI will open up, there you will see all the list of get, post thing you are doing in that current microservice in orderserviceloadbalancer.
+
+
+
+
+
+
+
+
+
