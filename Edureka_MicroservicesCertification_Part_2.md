@@ -331,8 +331,19 @@
     * So run this Grafana also in the Docker Container in some port . we will do this in AWS EC2 instance only.
     * Here we will add prometheus api and visualize the metrics in graph format.
    
-* SPRING AOP
-  * 
+* SPRING AOP 
+  * (See video for more understanding)
+  * IN LAYMAN WORDS
+  * AOP (Aspect Oriented Programming) is like we have trigger in sql.
+  * So it will help us to perform different types of action  when certain type of action is performed or defined in the aspect code.
+  * Example we want to print something when any Method with method name "ADd" is called.
+  * Example if we call "AddEmployee" method then before calling this method we want to print something, so this is how aspect oriented programming will help us.
+  * There can be other types of aspect, like logging etc.
+  * You can see more details later
+ 
+* PROJECT DISCUSSION
+  * At the end sir discuss about the project, and it is done.
+  * The training is over.
 
 
 * ------ END OF CLASS 12 ------
