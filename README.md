@@ -5,9 +5,24 @@ Learning Microservices with Springboot in Edureka will be enough to do starter a
 Anyways starter are not required. In Edureka Microservices, Starter are explained, so leave starter and start with spring boot only
 For IOC and DI, you can see bit spring framework working example with code, that too explained in spring boot microservice lecture.
 
+
 ### : Git issue : When cloning, first merge the current branch to Main, then only clone in git bash
 ### : Git Issue : Also when doing $$ git add . We are getting errors like- LF will be replaced by CRLF the next time Git touches it (To resolve that issue just write this command next, it will add  $$git config --global core.autocrlf true)
 
+
+# Contains all Java Related Training
+## 1.Edureka Java J2EE SOA Certification
+* Contains topics like Core Java, Threading, Collection, XML, JDBC, Hibernate, Servlets, Applets, Spring, SpringBoot
+* Batch Status : Batch is completed in year 2023, Learning and notes to be done, if required
+
+  
+## 2.Edureka Microservices Certification
+* Contains Microservice architecture using Spring Boot.
+* Topics Include: Monolithic vs Microservices, SOA vs Microservices, Spring, SpringBoot, IOC, DI, Microservices patterns like load balancer, registry service, API Gateway, Spring JPA, Spring Security, Docker etc.
+* Batch Status : Batch was completed in year 2023 only, Learning and notes have been made, the course certification, notes is all prepared here. whole course learning is done.
+
+
+# These are Extra Infos (For fast understanding the Spring, springboot - but now better see the notes added by me)
 ## Project Build Up from this Youtube Playlist
 * https://www.youtube.com/playlist?list=PLXXDXNrmlgEVMp_dPpVzWvylBAs52CxLw
 
