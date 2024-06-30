@@ -106,7 +106,7 @@
 
 #### 12.Spring, Ajax, and Design Patterns
 * According to course : In this module, you will learn advanced concepts of Spring Framework like AOP, Transaction Management Operations Commit and Rollback operations on database. Interacting * with server using Ajax framework and J2EE design patterns.
-* ----
+* 
 * Self Video Seeing and notes
 * Dependency Injection :
   * Using constructor method
@@ -140,14 +140,14 @@
 
 
 #### 13. SOA
-In this module, you will learn SOA and SOA Architecture. You will also learn how SOA is useful between organizations to perform the required task easily and how it can be implemented in web services.
+* In this module, you will learn SOA and SOA Architecture. You will also learn how SOA is useful between organizations to perform the required task easily and how it can be implemented in web services.
 
 #### 14. Web Services and Project
-In this module, you will learn SOA and implementation of web services. We will also discuss how to develop a project using Spring and Hibernate. This is a banking project with web services.
+* In this module, you will learn SOA and implementation of web services. We will also discuss how to develop a project using Spring and Hibernate. This is a banking project with web services.
 
 #### Final Project
+* 
 
--------
 
 ## After this we find that Spring is only like setting up whole project template ourselves, however, springBoot will give us direct templates as per our requirement
 
