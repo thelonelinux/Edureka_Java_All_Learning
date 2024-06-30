@@ -332,7 +332,7 @@
     * Here we will add prometheus api and visualize the metrics in graph format.
    
 * SPRING AOP 
-  * (See video for more understanding)
+  * (See video and code for more understanding)
   * IN LAYMAN WORDS
   * AOP (Aspect Oriented Programming) is like we have trigger in sql.
   * So it will help us to perform different types of action  when certain type of action is performed or defined in the aspect code.
