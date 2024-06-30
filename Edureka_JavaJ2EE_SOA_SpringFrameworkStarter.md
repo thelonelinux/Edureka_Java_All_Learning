@@ -129,7 +129,52 @@
   * In Real Projects, We mustly depend on @Autowired.
 
 * Spring DI - Collection :
-  * Until now we were setting single value object, but now we can set a list of values to a property in XML through collection
+  * Until now we were setting single value object, but now we can set a list of values to a property in XML through collection like list, map, and set.
+  * So just create the Hospital class. In hospital class we will have List<String department>
+  * and in xml bean configuration container hospital-beans.xml just add multiple string value in form of list. so that we can do multiple value input using List.
+  * so similarly you can do for set and map also. that's it.
+  * check in the code. there you can see code and understand more.
+
+* Now we will implement Employee-Engagement Project via Spring JDBC
+* Spring JDBC
+  * Create Spring JDBC Maven Project.
+  * Add spring-context dependency in pom.xml. Now to look for mysql dependency search in website : mvnrepository.com for artifacts and dependency name.
+  * There serch for mysql Connector j dependency and add that in your pom.xml file.
+  * Limitation of Old JDBC was : We have to create the connection object, Once the application is over we need to close the connection and statement with the database.
+  * but here in Spring JDBC, this will all be taken care of.
+  * Spring JDBC Template is a powerfule mechanism to connect to the database and execute the sql queries. It internally uses JDBC API, but eliminates lots of problems of JDBC API.
+  * So also add spring-jdbc dependency also. You can find this also in mvnrepository.com website only.
+  * So let's move to creating code and let's create Employeed DAT and DTO Package and create some class of Employee in it. Also create Service class.
+  * In EmployeeDAO class this time you don't have to write code to make connection. Spring Container will itself take care of spring jdbc connection.
+  * So just go in EmployeeDAOImpl class, and just create object of JdbcTemplate. This is the one object which will take care of connection.
+  * All the operations are done by JdbcTemplate only. So there you can also add execute Update using this object in EmployeeDAOImpl class.
+  * This time we don't need whole Config class which we used in J2EE normal JDBC to setup connection and setting queries.
+  * Rest you can see in video and code and understand in more details, More better you will understand if you create some of your own projects.
+  * EmployeeService.java and EmployeeServiceImpl.java class also we create. EmployeeServiceImpl only implements EmployeeService interface only for its function like in EmployeeDAO Impl.
+  * In EmployeeServiceImpl, we will do @Autowire injection of EmployeeDAO class object.
+  * Employee.java is plain pojo class.
+  * Now we create bean configuration as ems-beans.xml to make container configuration.
+  * here in Bean we make pre-defined class DriverManagerDataSource, which takes care of connection manager. There you just provide connection details in this bean.
+  * This will automatically create connection with database.
+  * And in jdbctemplate bean use ref of above bean. and in DAOImple bean add ref of jdbctemplate bean.
+  * And now bean of employee service, since it has autowired of DAOImpl, so it will pic dao bean. no need to add reference.
+  * Now our Main class using context just call this methods
+  * So this is all it. More you can see in videos and codes.
+  * In this DAO pattern all the class are used separately in different packages.
+ 
+    
+ * Now in the same way we can implement Spring Hibernate also
+ * Spring Hibernate :
+   * Sir has just given the steps and etc. In Spoon Feeding Manner.
+   * No need to write sql query, as they are created internally by hibernate.
+   * You can check somewhere else for more code.
+  
+ * Spring Servlet Program
+   * DAO layer, Controller Layer, and Service layer.
+   * 
+
+
+
 
 
 * ----END of Class 12 ------
