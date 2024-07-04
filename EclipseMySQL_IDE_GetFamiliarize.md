@@ -1,5 +1,6 @@
-# Here we will see use of Eclipse for SpringBoot Microservices Project.
+# Here we will see use of Eclipse and MySQL for SpringBoot Microservices Project.
 
+# Eclipse
 ## Importing the SpringBoot Maven Project
 * Once you have created the project in spring initializer : https://start.spring.io/;
 * Download that project, that project must be maven project, and JDK versoin you can chose whatever you have downloaded in the system.
@@ -27,3 +28,27 @@
 
 ## Running the jar file from Command Prompt
 * If we want to run same api application in different port in same computer/host. then we can create the jar file of it and run via different command prompts in same computer.
+
+
+# MySQL
+## How to install and setup in windows 11 and in command prompt with workbench ide
+* Just follow this youtube video : https://www.youtube.com/watch?v=mLQpd3hRD7g&ab_channel=AmitThinks
+* download website is : https://downloads.mysql.com/archives/installer/
+* In the video ther is option to open in command prompt
+* Setting up the environment
+* Username usually: root
+* pass is : Vichaha9haha@123 like thing only
+* Remember : There is dedicated command line also downloaded here for mysql. and you can do from normal command prompt also.
+
+## How to get connection details and connect my DB with SpringBoot project
+*
+
+
+
+
+
+
+
+
+
+
