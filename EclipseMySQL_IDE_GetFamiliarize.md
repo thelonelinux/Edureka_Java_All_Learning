@@ -1,5 +1,5 @@
 # Here we will see use of Eclipse and MySQL for SpringBoot Microservices Project.
-
+* Stop using Intellij Products as IDE, as they are not free, so better use Eclipse and MySql workbench instead of IntellijIdea and MyDataGrip
 # Eclipse
 ## Importing the SpringBoot Maven Project
 * Once you have created the project in spring initializer : https://start.spring.io/;
