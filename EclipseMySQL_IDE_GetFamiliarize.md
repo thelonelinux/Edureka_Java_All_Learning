@@ -74,7 +74,7 @@ create table IF NOT EXISTS book(
 -- so before issuing the library, first librarian will check if this book is present and also checks if this student has exceedes his book limit or not.
 
 create table IF NOT EXISTS bookIssued(
-	bookIssueReferenceId INTEGER NOT NULL,
+	bookIssueReferenceId INTEGER NOT NULL, -- This reference number will be added in book only, in it's history of issuance
 	issuedBookId INTEGER NOT NULL,
     issuedToStudentId INTEGER NOT NULL,
     issueDate date,
@@ -83,11 +83,23 @@ create table IF NOT EXISTS bookIssued(
     numberOfActiveBookInThisStudentId integer,  -- this count tells number of book present with this student id.
     statusOfThisIssueReferenceId varchar(32), -- Can be true of false, false for those which book is returned after fine is cleared if any
     finePendingStatusOnThisIssueReferenceId varchar(32),  -- default value : paid, unpaid, n/a (when fine is 0) : until the fine is paid, book can't be returned and fine keeps on going per day rule. default false; will be true when library gives him back
+    paymentId INTEGER,
     PRIMARY KEY (bookIssueReferenceId)
 );
 
+create table IF NOT EXISTS paymentRecords(
+	paymentId INTEGER NOT NULL,
+    bookIssueReferenceId INTEGER NOT NULL,
+    invoiceDate date,
+    paymentMode varchar(128),
+    invoicePdfUrl varchar(1024),
+	PRIMARY KEY (paymentId)
+);
 
-#####  ============================ INSRTING SOME VALUES IN THIS TABLE TO MAKE API AND UI =================================
+
+
+
+#####  ============================ INSERTING SOME VALUES IN THIS TABLE TO MAKE API AND UI =================================
 insert into student
 (studentId , firstName ,    lastName) 
 values
@@ -109,10 +121,10 @@ values
 
 insert into bookIssued
 (bookIssueReferenceId,issuedBookId,issuedToStudentId ,issueDate ,returnDate,fine , numberOfActiveBookInThisStudentId,
-    statusOfThisIssueReferenceId ,finePendingStatusOnThisIssueReferenceId )
+    statusOfThisIssueReferenceId ,finePendingStatusOnThisIssueReferenceId,paymentId )
  values
-(101,1,1,'2024-07-01',null,0,1,'Active','n/a'),
-(102,2,3,'2024-07-01',null,0,1,'Active','n/a');
+(101,1,1,'2024-07-01',null,0,1,'Active','n/a',null),
+(102,2,3,'2024-07-01',null,0,1,'Active','n/a',null);
 
 
 * Here primary key index will be build by default.
