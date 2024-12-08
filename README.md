@@ -33,16 +33,18 @@ For IOC and DI, you can see bit spring framework working example with code, that
 * Setting up Java Environment with JDK and Maven in MacOS - https://www.youtube.com/watch?v=t_TtZHda5-I&ab_channel=qavbox
 * Setting up Java Environment with JDK and Maven in Windows and Ubuntu - https://www.simplilearn.com/tutorials/maven-tutorial/how-to-install-maven
   
-### Setting up IntellijIdea and Configuration Setup for maven projects and spring boot projects
+### Setting up IntellijIdea and Configuration Setup for maven projects and spring boot projects (Pending task - In Progress)
 * Download IntellijIdea (Community Edition will be fine to run microservices project)
+* Checking on youtube blog to setup spring configurations and way to run the spring boot projects in tomcat.
+* Previously only done in eclipse ide.
 
-### Prerequisites
+## Prerequisites
 * Java
 * Spring Framework
 * SpringBoot (Springboot gives full project setup whereas in Spring Framework we have to set it up, which is time consuming)
 * Restful Webservices
 
-### Project Creation from Spring Initializer
+## Project Creation from Spring Initializer
 * https://start.spring.io/
 * Chose Maven only and chose your required dependencies and then download the zip file, extract zip file and then open the project in Spring Tool Suite
 * So how to import that project in your Spring Tool Suite, to do that check this below video link
