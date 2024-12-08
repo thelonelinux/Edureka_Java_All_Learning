@@ -21,6 +21,21 @@ For IOC and DI, you can see bit spring framework working example with code, that
   https://www.youtube.com/watch?v=-O4QVijnA7Y&t=300s&ab_channel=LearningLad
 * Postman
 
+## JAVA Environment Setup in IntellijIdea (Windows/Ubuntu/MacOS - Almost same requirement for setting up Java Environment)
+### Setting up Java and Maven
+* Download openJDK (Version according to your requirement)
+* Check by command $$java --version (to check java version)
+* Check by command $$javac --version (to check java compiler version)
+* Setup JAVA_HOME environment variable pointing to the path where this installation folder is created.
+* Download Maven build tool
+* Setup MAVEN_HOME (MVN_HOME) environment variable and also set MAVEN_HOME/bin url in path environment variable.
+* Some Useful links
+* Setting up Java Environment with JDK and Maven in MacOS - https://www.youtube.com/watch?v=t_TtZHda5-I&ab_channel=qavbox
+* Setting up Java Environment with JDK and Maven in Windows and Ubuntu - https://www.simplilearn.com/tutorials/maven-tutorial/how-to-install-maven
+  
+### Setting up IntellijIdea and Configuration Setup for maven projects and spring boot projects
+* Download IntellijIdea (Community Edition will be fine to run microservices project)
+
 ### Prerequisites
 * Java
 * Spring Framework
