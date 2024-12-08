@@ -1,4 +1,4 @@
-# SpringbootMicroservices_LearnAndProjectBuild
+# SpringbootMicroservices_LearnSetupAndProjectBuild
 * For detailed understanding check EdurekaSpringBootMicroserice readme file.
 * You will understand how everything works in java and what is the end point from where we have to start. we don't have to learn legacy things tech stack of java. 
 * Springboot Microservices Learning and Full Stack Project Build Up (Backend, frontend and Cloud, Docker)
@@ -10,14 +10,20 @@ F* or IOC and DI, you can see bit spring framework working example with code, th
 * https://www.youtube.com/playlist?list=PLXXDXNrmlgEVMp_dPpVzWvylBAs52CxLw
 
 ## Springboot Microservices (Spring Project)
-### Tools Requirement 
-* Spring Tool Suite (STS) IDE
-  * (Please check this link to install Spring tool suite and get along with project creation => https://www.youtube.com/watch?v=P1N-RGJ2820&t=315s&ab_channel=GeekyScript)
-* Git Bash
+### Tools/Software Requirement 
+
+#### Java Environment Tools (Must have)
 * JDK 1.8 (Please check this link below to install openJDK in your windows 10 laptop, and also how to setup environment variables and configuration)
   *  https://www.youtube.com/watch?v=-O4QVijnA7Y&t=300s&ab_channel=LearningLad
 * Maven Build Tool
+  
+#### IDEs
+* Spring Tool Suite (STS) IDE
+  * (Please check this link to install Spring tool suite and get along with project creation => https://www.youtube.com/watch?v=P1N-RGJ2820&t=315s&ab_channel=GeekyScript)
 * IntellijIdea or Eclipse IDE
+
+#### Other Required Tools
+* Git Bash
 * Postman
 
 ## JAVA Environment Setup in IntellijIdea (Windows/Ubuntu/MacOS - Almost same requirement for setting up Java Environment)
