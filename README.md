@@ -1,11 +1,19 @@
-# SpringbootMicroservices_LearnSetupAndProjectBuild
-* For detailed understanding check EdurekaSpringBootMicroserice readme file.
-* You will understand how everything works in java and what is the end point from where we have to start. we don't have to learn legacy things tech stack of java. 
-* Springboot Microservices Learning and Full Stack Project Build Up (Backend, frontend and Cloud, Docker)
-* Learning Microservices with Springboot in Edureka will be enough to do starter as well as advance. 
-* Anyways starter are not required. In Edureka Microservices, Starter are explained, so leave starter and start with spring boot only
-F* or IOC and DI, you can see bit spring framework working example with code, that too explained in spring boot microservice lecture.
 
+
+
+# Contains all Java Related Training
+## 1.Edureka Java J2EE SOA Certification
+* Contains topics like Core Java, Threading, Collection, XML, JDBC, Hibernate, Servlets, Applets, Spring, SpringBoot
+* Batch Status : Batch is completed in year 2023, Learning and notes to be done, if required
+
+  
+## 2.Edureka Microservices Certification
+* Contains Microservice architecture using Spring Boot.
+* Topics Include: Monolithic vs Microservices, SOA vs Microservices, Spring, SpringBoot, IOC, DI, Microservices patterns like load balancer, registry service, API Gateway, Spring JPA, Spring Security, Docker etc.
+* Batch Status : Batch was completed in year 2023 only, Learning and notes have been made, the course certification, notes is all prepared here. whole course learning is done.
+
+
+# These are Extra Infos (For fast understanding the Spring, springboot - but now better see the notes added by me)
 ## Project Build Up from this Youtube Playlist
 * https://www.youtube.com/playlist?list=PLXXDXNrmlgEVMp_dPpVzWvylBAs52CxLw
 

@@ -145,7 +145,7 @@
 
 
 ## 9.Final Project (4 Class in one)
-### CLASS 9 (Config Server Implementation (single repo for application.settings file, Spring boot Actuator : health monitoring, Zipkin - API tracing and debugging )
+### CLASS 9 (Config Server Program (single repo for application.settings file, Spring boot Actuator: Health monitor, Zipkin - API tracing and debugging, Spring Security - Basic Auth (Authentication and Authorization)
 * CONFIG SERVER (For more detail see video and code and write detail notes later)
 * In Lay man words
   * ConfigServer Spring project we will build.
@@ -220,8 +220,140 @@
 * Now we will be doing next topic
 
 * SPRING SECURITY (Basic auth, OAuth, JWT)
+  * We will first check with code and notes (More detail you can re-check code and lecture video)
+  * In Lay Man words
+       * We did BASIC AUTH Spring Security, Sir has already made the codes ready, dependencies were added.
+       * We will be doing authentication (User log in with user name and password) and authorization (what kind of access that user should have)
+       * So we will have two tables (Userauthentication and UserAuthorization) in our securityDatabase in mysql which will contain user details and password.
+       * authorization based on the roles.
+       * So this password should be in hashcode form using MD5 (Message Digest). Password should not be stored in plain text. MD5 form can't be reversed like encrypted code.
+       * So password are stored as irreversable hash code rather than in plain text or encrypted form. so when the user enter the user name and password, password is first encoded via MD5
+       * and then compared with the MD5 present in the table, and then it will login if both hash are same. so this is how it works. Password is encrypted using BCrypt.
+       * To use as plain password in db table we will use {noop} see videos to understand more.
+       * encoder code how it works you can see in java class PasswordEncoder.java, And you can pick that and put in table as hash rather than plain.
+       * So one we add all the details, we will run/add some code in SecurityConfig.java class. that will take care of both authenticatin and also have authorization check there and filteration
+       * .httpBasic() : This code in that code will help us to open small window to login user and password when we try to open or send request to that service.
+       * DaoAuthenticationProvider this and other beans used in SecurityConfig.java are pre-build class by java spring boot security dependencies.
+       * use csrf also explained, check it in video only.
+* So this is all it
+
+* Next class we will be doing OAuth Authentication and JWT Security
+
+* --END OF CLASS 9 ---------
+
+### CLASS 10 (Sir was out due to personal reasons - check from class 11, nothing taught here)
+* This is 1 Hour class, unlike the previous ones where we used to have 3 hours classes in all of them.
+* There is no class, Sir was absent due to personal reasons
+* Just some QnA happened, that too for 15 minutes. not to learn anything in this class for now.
 
 
-### CLASS 10
-### CLASS 11
-### CLASS 12
+### CLASS 11 (Spring Security - for Authentication login, Docker - to deploy our microservice in containers)
+* SPRING SECURITY using OAUTH
+  * OAuth is Open Authentication, which means like you can login by using google login, or facebook or github login, In that case the client (that website) will have access to your google mails
+  * So this is Open Authentication. Here client ID and client secret are generated to be used by third party website from google to validate login and generate OAuth token.
+  * There are different flows in OAuth, We will focusing mainly on CLIENT CREDENTIALS FLOW for Microservices. (To see other flows please see video class only)
+    * CLIENT CREDENTIALS FLOW for Microservices : This is for service to service authentication.
+         * Similar flow for this also, check in video only, how it flows, token etc.
+         * In lay man word flow will be like this :
+              * Let's say microservice client will call OAuth Server  (Google, github login) by giving client id and client secret to it.
+              * Now OAuth server will give back Oauth token to client microservice
+              * Now client microservice will send this token to resource server (which client is trying to access it's APIs etc)
+              * Now resource server will send this Oauth token given by client microservice and validate with OAuth server, so here introspection is done by resource server for oauth token
+              * Once the validation is successful, Client Microservice will be able to access the Resource servers api's etc.
+              * If token not valid then token not valid message to send and Client Microservice will be unable to access resource apis.
+              * so this is CLIENT CREDENTIALS FLOW in microservice.
+          * So now we will do code project design to implement this
+          * CODE PART:
+            * We will have our own Spring Server Authorization microservice instead of google,github which will access to oauth_client_details table
+            * We will have Client Microservice User which will try to authenticate like the same above flow, It will send POST oauth/token with parameter user id and user secret as request data.
+            * Once the validation is done we will able to access API gateway, API gateway is that same project which will have orderserviceloadbalancer, product service, which we have developed.
+            * OAuth token is also of two types
+                 * Opaque token (Simple token like normal password)
+                 * JWT token (Heavy token where we store the client side state information) (This contains header,body and signature)
+             
+                   
+* Project program with OAuth jwt token
+  * Sir has already created the project, also see in this repo to understand more about the code.
+  * check in code SecurityConfig.java, there you will also find comment sir has written in the code to understand.
+  * Security filter chain is also used here. You will also fine table sql script for datasource to that oauth_client_details.
+  * Client Microservice is like calling Post from Postman with details to run the project. You can see in video lecture only.
+  * You will get the JWT token as postman response which you can check in jwt.io website to see parts of this JWT token.
+  * Now using this token call apis like localhost://orders/ in postman we have authorization optiion, add first Bearer and then space and then token and run, you will get response.
+  * springcloudgatewayjwt : this project also extact and check code there in this repo, it is present there
+  * So this is the whole flow and code
+ 
+    
+* So security part is also completed.
+* Now we will be starting with dockers.
+
+* DOCKERS
+  * IN LAYMAN WORDS (More detail see lecture video)
+  * Docker is an Application based Container that contains a jar file, a docker file, and required libraries like jdk to run that single application in the host machine.
+  * We can have multiple container in a machine
+  * Docker engine take cares for all this container by some commands.
+  * Container is not VM, VM has it's own OS, Container Don't    
+
+* In next class we will run our microservice in docker containers.
+* 
+* -- END of CLASS 11 --
+
+
+
+
+### CLASS 12 (Docker - For Container in AWS, Swagger - For checking all the apis present in microservice, Prometheus, Grafane - to Visualize Metric like CPU, ram usage)
+* DOCKER
+  * IN LAYMAN WORDS (For detail - please check in video only)
+  * Sir used AWS EC2 Instance of Ubuntu as a host machine
+  * Installed Docker in this EC2 Ubuntu Instance
+  * Copied jar file of our RegistryServie, LoadBalancerOrderService, and LoadBalancer microservice from his local windows machine to EC2 Ubuntu Machine using SFTP file transfer software
+  * Check video lecture on how to do jar file transfer.
+  * After creating the Docker File for each application jar file and run this appication microservice in separate container
+  * Used the public IP to request the service and it was working fine, all the microservices were working fine in the container.
+ 
+* SWAGGER
+  * IN LAYMAN WORDS (For detail - please check in video only)
+  * Sir just added the openAPI dependencies in the orderserviceloadbalancer to add swagger in our microservice
+  * This is only used to check what all api's call are preesnt in our microservice,
+  * You can check by opening this url in the browser => localhost://6200/swagger-ui/index.html
+  * A UI will open up, there you will see all the list of get, post thing you are doing in that current microservice in orderserviceloadbalancer.
+ 
+* PROMETHEUS
+  * IN LAYMAN WORDS (For detail - please check in video only)
+  * Visualizing Spring Boot Metrics from Prometheus Dashboard in Graph or better manner.
+  * This is that metric displaying dashboard which we learn previously in Actuator in previous classes
+  * This will give you the stats of your machine, RAM, CPU in better format
+  * So here we will run Prometheus image in separate docker Container in AWS EC2 Instance only and then run the docker container where our microservices are there.
+  * In it's docker file we will set port of orderserviceloadbalancer, so it will pull the metric of this orderserviceloadbalancer after every 5 minutes, specified in it's docker file.
+  * It has time series DB where metric details after every certain interval is stored.
+  * And now open this apis. You will see prometheus Dashboard.
+  * GRAFANA
+    * Grafana is better way to show all the metrics,
+    * So run this Grafana also in the Docker Container in some port . we will do this in AWS EC2 instance only.
+    * Here we will add prometheus api and visualize the metrics in graph format.
+   
+* SPRING AOP 
+  * (See video and code for more understanding)
+  * IN LAYMAN WORDS
+  * AOP (Aspect Oriented Programming) is like we have trigger in sql.
+  * So it will help us to perform different types of action  when certain type of action is performed or defined in the aspect code.
+  * Example we want to print something when any Method with method name "ADd" is called.
+  * Example if we call "AddEmployee" method then before calling this method we want to print something, so this is how aspect oriented programming will help us.
+  * There can be other types of aspect, like logging etc.
+  * You can see more details later
+ 
+* PROJECT DISCUSSION
+  * At the end sir discuss about the project, and it is done.
+  * The training is over.
+
+
+* ------ END OF CLASS 12 ------
+* ------ END OF TRAINING CUM CERTIFICATION ------
+
+
+
+
+
+
+
+
+
