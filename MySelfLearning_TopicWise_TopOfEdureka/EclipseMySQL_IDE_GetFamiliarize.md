@@ -17,13 +17,13 @@
 ## Running the springboot project in TomCat Server
 * To run the project service on tomcat server. first make sure it is spring boot application. As springboot annotation must be there in the projectNamed java file.
 * Only the springboot project has pre-installed Tomcat server, as you have to install yourself.
-* Open that projectNamedjava file.
-* Righg click on it.
+* Open that project Named java file.
+* Right click on it.
 * click on Run As, and then click Run As java application. Your project will run in tomcat server
 * You can check the port in settings.properties file the port in which your project is running, or check in console when the tomcat server is started, it will show you there only the port id.
 
 ## Create the jar file of the application in Eclipse
-* You can build your project and create the jar file, which is a executable application file. You can run thie jar file from command prompt.
+* You can build your project and create the jar file, which is a executable application file. You can run this jar file from command prompt.
 * You can also use this jar file to run in docker or any other services
 
 ## Running the jar file from Command Prompt
