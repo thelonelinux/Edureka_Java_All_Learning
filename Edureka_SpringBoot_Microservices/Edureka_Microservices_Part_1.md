@@ -74,8 +74,6 @@ SpringBoot is a foundation of Microservices
   * Microservices Architecture: Services are prepared separately in any code language, and connected by using web services connectors.
   * END OF CLASS 1 ------
 
-
-
 ### 2.Microservices Design and Architecture
 * Microservices design based on Business Capability
   * So we can have different microservices following some business capability and each microservices has more services within that domain.
@@ -127,7 +125,6 @@ SpringBoot is a foundation of Microservices
 12. External config pattern
 13. Chained pattern
 
-
 ### 3.Introduction to Springboot and Spring framework - I (But we only did pattern in microservices notes learning, no codes)
 * Patterns Used In Microservices (Continue where we left in previous class)
 2. API Gateway Pattern (from next class)0
@@ -174,9 +171,10 @@ SpringBoot is a foundation of Microservices
 10. Shared database pattern
 11. Single database per service pattern
 12. External config pattern
-13. Chained pattern
-   
-### 4. Springboot and Spring Framework - II (Here we did spring framework IOC and DI understand via code and using spring MVC we created the rest service project)
+* 13. Chained pattern
+* -- END --
+
+### 4.Springboot and Spring Framework - II (Here we did spring framework IOC and DI understand via code and using spring MVC we created the rest service project)
 * Spring FrameWork and Spring Boot
 * In Microservice, single database per service is the ideal pattern, but it has limitation, as we see in previous lecture.
 * To know the spring Boot we need to first know the basics of spring framework, because spring boot is developed over spring framework.
@@ -246,7 +244,6 @@ SpringBoot is a foundation of Microservices
    * HTTP(This is protocol) ://localhost (Tomcat server or host name or IP address):8080 (Port)/springRestApiDemoProject (Application name)/customer (Api Path - GET customer)
 * Next clas we will see how to do same task Using SpringBoot.
 * End of Class 4 -------
-
 
 ### 5.Microservices with Springboot and Cloud
 * Class 5 Learning
@@ -394,9 +391,6 @@ SpringBoot is a foundation of Microservices
    * So these are basic operations like findAll(), findByID() provided by JPA, so in next class we will make custom function for our table for non primary keys also.
    * We will make Custom Queries in next class. like getting student by mail and first name, and etc etc. Not all are pre-defined so we can make on our own, we will do that in next class.
    * ------ end of class 5 ------
- 
-
-
 
 ### 6.Microservices Security
 * Class 6 begins
@@ -504,8 +498,6 @@ SpringBoot is a foundation of Microservices
    
 * So now we will see a Ecommerce application to implement microservices.
 * 
-
-
 
 ### 7.Docker with Microservices using Spring Boot - I
 ### 8.Docker with Microservices using Spring Boot - II

@@ -1,7 +1,7 @@
 # This is continuation of EdurekaMicroservicesTrainingCourse.md
 
 ## 6.Microservices Security (Continued...)
-## Starting from Lecture 6 Continued.
+### Starting from Lecture 6 Continued.
 * From here we will be doing Ecommerce microservice implementation using Spring boot.
 * ECommerce Application :
       * 1. Orders Microservice (Spring Boot Project)
@@ -23,7 +23,6 @@
 * We will be also doing DOCKER in our project, But kubernetes is not part of our syllabus. So whatever Kubernetes is providing , that we can find in Spring Cloud also.
 * Next class we will start with Service Registration and Discovery
 * --- END OF CLASS 6 -------
-
 
 ## 7.Docker with Microservices using Spring Boot - I (Actually includes order service, service registry and discovery, and load balancer)
 * Lecture 7 class starts
@@ -72,10 +71,7 @@
             * active state, so this is the loop which Resiliency and Circuit breaker will handle.
 * LATER = write in detail by re-visting the lecture video again
 
-* 
----- END OF class 7 (Need to write notes though, will do later)-----
-
-
+* ---- END OF class 7 (Need to write notes though, will do later)-----
 
 ## 8.Docker with Microservices using Spring Boot - II (We did Resiliency and Circuit breaker, API Gateway and then Spring Cloud Config - Config Server)
 * Start of class 8
@@ -137,12 +133,6 @@
   * Next class we will do the coding of this task
  
 * --- END OF CLASS 8 ------
-  
-
-
-
-  
-
 
 ## 9.Final Project (4 Class in one)
 ### CLASS 9 (Config Server Program (single repo for application.settings file, Spring boot Actuator: Health monitor, Zipkin - API tracing and debugging, Spring Security - Basic Auth (Authentication and Authorization)
