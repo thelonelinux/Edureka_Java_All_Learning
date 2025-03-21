@@ -1,10 +1,9 @@
 # JAVA SPRING FRAMEWORK SPRING BOOT MICROSERVICES LEARNING
 * For detailed understanding check EdurekaSpringBootMicroservice readme file.
-* You will understand how everything works in java and what is the end point from where we have to start. we don't have to learn legacy things tech stack of java.
-* Springboot Microservices Learning and Full Stack Project Build Up (Backend, frontend and Cloud, Docker)
-* Learning Microservices with Springboot in Edureka will be enough to do starter as well as advance.
-* Anyways starter are not required. In Edureka Microservices, Starter are explained, so leave starter and start with spring boot only
-* For IOC and DI, you can see bit spring framework working example with code, that too explained in spring boot microservice lecture.
+* This is very first learning from edureka.
+* But you can learn this two repos for better
+*  https://github.com/thelonelinux/Spring_Framework_Interv_Learning  (For basic spring and all)
+*  https://github.com/thelonelinux/LibraryManagementSystem (For spring boot and microservices)
 
 
 
